@@ -19,8 +19,8 @@
         self.clipsToBounds = YES;
         self.layer.shadowColor = [UIColor lightGrayColor].CGColor;
         self.layer.backgroundColor = [UIColor clearColor].CGColor;
-        self.layer.shadowRadius = 2.0;
-        self.layer.shadowOffset = CGSizeMake(4.0, 4.0);
+        self.layer.shadowRadius = 4.0;
+        self.layer.shadowOffset = CGSizeMake(2.0, 2.0);
         self.layer.shadowOpacity = 0.8;
         self.layer.masksToBounds = NO;
         self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:self.layer.cornerRadius].CGPath;

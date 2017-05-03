@@ -17,7 +17,7 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        CGFloat imageSize = 60.0f;
+        CGFloat imageSize = self.frame.size.width*0.2;
         self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2.0-imageSize/2.0, 50, imageSize, imageSize)];
         self.imageView.image = [UIImage imageNamed:@"logo.png"];
         
@@ -34,6 +34,7 @@
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.titleLabel.frame)-10, self.frame.size.width, self.frame.size.width+20) collectionViewLayout:flowLayout];
         self.collectionView.backgroundColor = [UIColor clearColor];
+        self.collectionView.showsHorizontalScrollIndicator = NO;
         self.collectionView.pagingEnabled = YES;
         [self.collectionView registerClass:[MenuCollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
         self.collectionView.delegate = self;

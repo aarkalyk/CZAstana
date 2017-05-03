@@ -20,7 +20,6 @@
 		082B757F1EBA4F99006D9B8F /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 082B757E1EBA4F99006D9B8F /* MenuView.m */; };
 		082B75821EBA51F3006D9B8F /* MenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 082B75811EBA51F3006D9B8F /* MenuCollectionViewCell.m */; };
 		082B75851EBA5FB9006D9B8F /* MenuItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 082B75841EBA5FB9006D9B8F /* MenuItemCollectionViewCell.m */; };
-		082B75871EBA60A0006D9B8F /* daniyar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 082B75861EBA60A0006D9B8F /* daniyar.jpg */; };
 		082B758A1EBA6A10006D9B8F /* Categories in Resources */ = {isa = PBXBuildFile; fileRef = 082B75891EBA6A10006D9B8F /* Categories */; };
 		082B758D1EBA6A3C006D9B8F /* UIFont+CZFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 082B758C1EBA6A3C006D9B8F /* UIFont+CZFont.m */; };
 		082B75901EBA77F4006D9B8F /* UIColor+CZColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 082B758F1EBA77F4006D9B8F /* UIColor+CZColor.m */; };
@@ -68,7 +67,6 @@
 		082B75811EBA51F3006D9B8F /* MenuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuCollectionViewCell.m; path = Views/MenuCollectionViewCell.m; sourceTree = "<group>"; };
 		082B75831EBA5FB9006D9B8F /* MenuItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuItemCollectionViewCell.h; path = Views/MenuItemCollectionViewCell.h; sourceTree = "<group>"; };
 		082B75841EBA5FB9006D9B8F /* MenuItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuItemCollectionViewCell.m; path = Views/MenuItemCollectionViewCell.m; sourceTree = "<group>"; };
-		082B75861EBA60A0006D9B8F /* daniyar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = daniyar.jpg; sourceTree = "<group>"; };
 		082B75891EBA6A10006D9B8F /* Categories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Categories; sourceTree = "<group>"; };
 		082B758B1EBA6A3C006D9B8F /* UIFont+CZFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+CZFont.h"; path = "Categories/UIFont+CZFont.h"; sourceTree = "<group>"; };
 		082B758C1EBA6A3C006D9B8F /* UIFont+CZFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CZFont.m"; path = "Categories/UIFont+CZFont.m"; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 		082B75411EBA4840006D9B8F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				082B75861EBA60A0006D9B8F /* daniyar.jpg */,
 				082B75421EBA4840006D9B8F /* main.m */,
 			);
 			name = "Supporting Files";
@@ -289,7 +286,6 @@
 				082B758A1EBA6A10006D9B8F /* Categories in Resources */,
 				082B757C1EBA4DC8006D9B8F /* Models in Resources */,
 				082B75511EBA4840006D9B8F /* LaunchScreen.storyboard in Resources */,
-				082B75871EBA60A0006D9B8F /* daniyar.jpg in Resources */,
 				082B754E1EBA4840006D9B8F /* Assets.xcassets in Resources */,
 				082B75751EBA4CB1006D9B8F /* Controllers in Resources */,
 				082B757A1EBA4DB7006D9B8F /* Views in Resources */,
