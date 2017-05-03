@@ -11,15 +11,15 @@
 @implementation UIFont (CZFont)
 
 +(UIFont *)fontLightWithSize:(CGFloat)size{
-    return [UIFont fontWithName:@"Helvetica-Light" size:size];
+    return [UIFont fontWithName:@"Avenir-Light" size:size];
 }
 
 +(UIFont *)fontRegularWithSize:(CGFloat)size{
-    return [UIFont fontWithName:@"Helvetica-Regular" size:size];
+    return [UIFont fontWithName:@"Avenir-Heavy" size:size];
 }
 
 +(UIFont *)fontBoldWithSize:(CGFloat)size{
-    return [UIFont fontWithName:@"Helvetica-Bold" size:size];
+    return [UIFont fontWithName:@"Avenir-Black" size:size];
 }
 
 @end

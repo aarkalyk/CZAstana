@@ -24,7 +24,7 @@
 }
 
 -(void)setUp{
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     self.menuView = [[MenuView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:self.menuView];

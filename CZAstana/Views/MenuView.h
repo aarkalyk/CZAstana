@@ -10,6 +10,8 @@
 
 @interface MenuView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
+@property (nonatomic) UIImageView *imageView;
+@property (nonatomic) UILabel *titleLabel;
 @property (nonatomic) UICollectionView *collectionView;
 
 @end

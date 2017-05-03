@@ -19,8 +19,8 @@
         self.clipsToBounds = YES;
         self.layer.shadowColor = [UIColor lightGrayColor].CGColor;
         self.layer.backgroundColor = [UIColor clearColor].CGColor;
-        self.layer.shadowRadius = 0;
-        self.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+        self.layer.shadowRadius = 2.0;
+        self.layer.shadowOffset = CGSizeMake(4.0, 4.0);
         self.layer.shadowOpacity = 0.8;
         self.layer.masksToBounds = NO;
         self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:self.layer.cornerRadius].CGPath;
@@ -31,7 +31,7 @@
         
         self.titleTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.imageView.frame), self.contentView.frame.size.width, self.contentView.frame.size.height-CGRectGetMaxY(self.imageView.frame))];
         self.titleTextView.text = @"DLYA РАБОТАДАТЕЛЕЙ";
-        self.titleTextView.font = [UIFont fontRegularWithSize:9];
+        self.titleTextView.font = [UIFont fontRegularWithSize:7.6];
         self.titleTextView.textAlignment = NSTextAlignmentCenter;
         self.titleTextView.scrollEnabled = NO;
         self.titleTextView.editable = NO;

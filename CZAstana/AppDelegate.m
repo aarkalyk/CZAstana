@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "UIColor+CZColor.h"
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -23,10 +24,26 @@
     MenuViewController *menuVC  = [MenuViewController new];
     menuVC.title = @"Menu";
     UINavigationController *navigationController1 = [[UINavigationController alloc] initWithRootViewController:menuVC];
+    [navigationController1.navigationBar setTranslucent:NO];
+    navigationController1.navigationBar.barTintColor = [UIColor mainGreenColor];
+    navigationController1.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                               [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                               [UIFont fontWithName:@"ArialMT" size:16.0], NSFontAttributeName,nil];
+    navigationController1.navigationBar.tintColor = [UIColor whiteColor];
     
     self.tabBarController = [UITabBarController new];
-    NSArray<UIViewController *> *controllers = [[NSArray alloc] initWithObjects: navigationController1, nil];
+    NSArray<UIViewController *> *controllers = [[NSArray alloc] initWithObjects: menuVC, navigationController1, nil];
     self.tabBarController.viewControllers = controllers;
+    UITabBarItem *item = self.tabBarController.tabBar.items[0];
+    item.title = @"MENU";
+    item.image = [UIImage imageNamed:@"home.png"];
+    UITabBarItem *item1 = self.tabBarController.tabBar.items[1];
+    item1.title = @"FAVORITE";
+    item1.image = [UIImage imageNamed:@"star.png"];
+    self.tabBarController.tabBar.barTintColor = [UIColor mainGreenColor];
+    self.tabBarController.tabBar.shadowImage = [UIImage new];
+    self.tabBarController.tabBar.tintColor = [UIColor yellowColor];
+    self.tabBarController.tabBar.unselectedItemTintColor = [UIColor whiteColor];
     
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];

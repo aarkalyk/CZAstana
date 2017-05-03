@@ -23,6 +23,7 @@
 		082B75871EBA60A0006D9B8F /* daniyar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 082B75861EBA60A0006D9B8F /* daniyar.jpg */; };
 		082B758A1EBA6A10006D9B8F /* Categories in Resources */ = {isa = PBXBuildFile; fileRef = 082B75891EBA6A10006D9B8F /* Categories */; };
 		082B758D1EBA6A3C006D9B8F /* UIFont+CZFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 082B758C1EBA6A3C006D9B8F /* UIFont+CZFont.m */; };
+		082B75901EBA77F4006D9B8F /* UIColor+CZColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 082B758F1EBA77F4006D9B8F /* UIColor+CZColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		082B75891EBA6A10006D9B8F /* Categories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Categories; sourceTree = "<group>"; };
 		082B758B1EBA6A3C006D9B8F /* UIFont+CZFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+CZFont.h"; path = "Categories/UIFont+CZFont.h"; sourceTree = "<group>"; };
 		082B758C1EBA6A3C006D9B8F /* UIFont+CZFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CZFont.m"; path = "Categories/UIFont+CZFont.m"; sourceTree = "<group>"; };
+		082B758E1EBA77F4006D9B8F /* UIColor+CZColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CZColor.h"; path = "Categories/UIColor+CZColor.h"; sourceTree = "<group>"; };
+		082B758F1EBA77F4006D9B8F /* UIColor+CZColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CZColor.m"; path = "Categories/UIColor+CZColor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				082B75841EBA5FB9006D9B8F /* MenuItemCollectionViewCell.m */,
 				082B758B1EBA6A3C006D9B8F /* UIFont+CZFont.h */,
 				082B758C1EBA6A3C006D9B8F /* UIFont+CZFont.m */,
+				082B758E1EBA77F4006D9B8F /* UIColor+CZColor.h */,
+				082B758F1EBA77F4006D9B8F /* UIColor+CZColor.m */,
 			);
 			path = CZAstana;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				082B75901EBA77F4006D9B8F /* UIColor+CZColor.m in Sources */,
 				082B75821EBA51F3006D9B8F /* MenuCollectionViewCell.m in Sources */,
 				082B75461EBA4840006D9B8F /* AppDelegate.m in Sources */,
 				082B75851EBA5FB9006D9B8F /* MenuItemCollectionViewCell.m in Sources */,
