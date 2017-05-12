@@ -9,11 +9,14 @@
 #import "VacanciesCollectionViewCell.h"
 #import "VacanciesViewController.h"
 #import "VacanciesTableViewCell.h"
+#import "UIColor+CZColor.h"
+#import "SearchView.h"
 
 @interface VacanciesViewController ()<UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic) UICollectionView *collectionView;
 @property (nonatomic) UITableView *tableView;
+@property (nonatomic) SearchView *searchView;
 
 @end
 
@@ -27,14 +30,18 @@
 -(void)setup{
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.searchView = [[SearchView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    [self.view addSubview:self.searchView];
+    
     UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
     flowLayout.minimumLineSpacing = 0;
     flowLayout.minimumInteritemSpacing = 0;
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50) collectionViewLayout:flowLayout];
-    self.collectionView.backgroundColor = [UIColor lightGrayColor];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.searchView.frame), self.view.frame.size.width, 50) collectionViewLayout:flowLayout];
+    self.collectionView.backgroundColor = [UIColor customLightGrayColor];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    self.collectionView.showsHorizontalScrollIndicator = NO;
     [self.collectionView registerClass:[VacanciesCollectionViewCell class] forCellWithReuseIdentifier:@"CVCell"];
     [self.view addSubview:self.collectionView];
     
@@ -69,7 +76,7 @@
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(10, 0, -40, 0);
+    return UIEdgeInsetsMake(0, 0, 0, 0);
     //UIEdgeInsetsMake(<#CGFloat top#>, <#CGFloat left#>, <#CGFloat bottom#>, <#CGFloat right#>)
 }
 
@@ -85,10 +92,10 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     VacanciesTableViewCell *cell = (VacanciesTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    cell.titleLabel.text = @"Title";
+    cell.titleLabel.text = @"iOS developer";
     cell.titleLabel.textColor = [UIColor blackColor];
-    cell.dateLabel.text = @"Date";
-    cell.salaryLabel.text = @"Salary";
+    cell.dateLabel.text = @"May 4th";
+    cell.salaryLabel.text = @"3000$";
     cell.starImageView.image = [UIImage imageNamed:@"daniyar"];
     
     return cell;

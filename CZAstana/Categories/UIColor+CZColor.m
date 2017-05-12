@@ -14,4 +14,8 @@
     return [UIColor colorWithRed:1/255.0 green:230/255.0 blue:141/255.0 alpha:1.0f];
 }
 
++(UIColor *)customLightGrayColor{
+    return [UIColor colorWithRed:196/255.0 green:196/255.0 blue:201/255.0 alpha:1.0f];
+}
+
 @end

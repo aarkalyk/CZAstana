@@ -10,4 +10,8 @@
 
 @interface SearchView : UIView
 
+@property (nonatomic) UISearchBar *searchBar;
+@property (nonatomic) UIImageView *filterImageView;
+@property (nonatomic) UIView *lineView;
+
 @end

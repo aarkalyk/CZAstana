@@ -11,5 +11,6 @@
 @interface UIColor (CZColor)
 
 +(UIColor *)mainGreenColor;
++(UIColor *)customLightGrayColor;
 
 @end
