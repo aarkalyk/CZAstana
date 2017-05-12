@@ -8,6 +8,7 @@
 
 #import "VacanciesCollectionViewCell.h"
 #import "VacanciesViewController.h"
+#import "UIImageView+CZImageView.h"
 #import "VacanciesTableViewCell.h"
 #import "UIColor+CZColor.h"
 #import "SearchView.h"
@@ -17,6 +18,7 @@
 @property (nonatomic) UICollectionView *collectionView;
 @property (nonatomic) UITableView *tableView;
 @property (nonatomic) SearchView *searchView;
+@property (nonatomic) NSMutableArray *categoryIconNames;
 
 @end
 
@@ -28,14 +30,17 @@
 }
 
 -(void)setup{
+    self.navigationItem.title = @"Вакансии";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.categoryIconNames = [[NSMutableArray alloc] initWithObjects:@"bus", @"doctor", @"engineer", @"law", @"theater", @"bus", @"doctor", @"engineer", @"law", @"theater", nil];
     
     self.searchView = [[SearchView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
     [self.view addSubview:self.searchView];
     
     UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
-    flowLayout.minimumLineSpacing = 0;
-    flowLayout.minimumInteritemSpacing = 0;
+    flowLayout.minimumLineSpacing = 5;
+    flowLayout.minimumInteritemSpacing = 5;
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.searchView.frame), self.view.frame.size.width, 50) collectionViewLayout:flowLayout];
     self.collectionView.backgroundColor = [UIColor customLightGrayColor];
@@ -59,20 +64,21 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 20;
+    return self.categoryIconNames.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     VacanciesCollectionViewCell *cell = (VacanciesCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CVCell" forIndexPath:indexPath];
     
     cell.backgroundColor = [UIColor clearColor];
-    cell.imageView.image = [UIImage imageNamed:@"daniyar"];
+    cell.imageView.image = [UIImage imageNamed:self.categoryIconNames[indexPath.row]];
+    [UIImageView setColor:[UIColor mainGreenColor] toImageView:cell.imageView];
     
     return cell;
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(collectionView.frame.size.height, collectionView.frame.size.height);
+    return CGSizeMake(collectionView.frame.size.height*0.8, collectionView.frame.size.height*0.8);
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
@@ -93,10 +99,8 @@
     VacanciesTableViewCell *cell = (VacanciesTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     cell.titleLabel.text = @"iOS developer";
-    cell.titleLabel.textColor = [UIColor blackColor];
     cell.dateLabel.text = @"May 4th";
     cell.salaryLabel.text = @"3000$";
-    cell.starImageView.image = [UIImage imageNamed:@"daniyar"];
     
     return cell;
 }

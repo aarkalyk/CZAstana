@@ -12,4 +12,7 @@
 
 @property (nonatomic) UICollectionView *collectionView;
 
+@property (nonatomic) NSMutableArray *iconNames;
+@property (nonatomic) NSMutableArray *titles;
+
 @end

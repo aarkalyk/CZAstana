@@ -8,7 +8,9 @@
 
 #import "VacanciesViewController.h"
 #import "MenuViewController.h"
+#import "NewsViewController.h"
 #import "UIColor+CZColor.h"
+#import "UIImage+CZImage.h"
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -23,7 +25,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     MenuViewController *menuVC  = [MenuViewController new];
-    menuVC.title = @"Menu";
+    //menuVC.title = @"Menu";
     UINavigationController *navigationController1 = [[UINavigationController alloc] initWithRootViewController:menuVC];
     [navigationController1.navigationBar setTranslucent:NO];
     navigationController1.navigationBar.barTintColor = [UIColor mainGreenColor];
@@ -33,7 +35,7 @@
     navigationController1.navigationBar.tintColor = [UIColor whiteColor];
     
     VacanciesViewController *vacanciesVC = [VacanciesViewController new];
-    vacanciesVC.title = @"Vacancies";
+    //vacanciesVC.title = @"Vacancies";
     UINavigationController *navigationController2 = [[UINavigationController alloc] initWithRootViewController:vacanciesVC];
     [navigationController2.navigationBar setTranslucent:NO];
     navigationController2.navigationBar.barTintColor = [UIColor mainGreenColor];
@@ -42,15 +44,53 @@
                                                                [UIFont fontWithName:@"ArialMT" size:16.0], NSFontAttributeName,nil];
     navigationController2.navigationBar.tintColor = [UIColor whiteColor];
     
+    NewsViewController *newsVC = [NewsViewController new];
+    //newsVC.title = @"News";
+    UINavigationController *navigationController3 = [[UINavigationController alloc] initWithRootViewController:newsVC];
+    [navigationController3.navigationBar setTranslucent:NO];
+    navigationController3.navigationBar.barTintColor = [UIColor mainGreenColor];
+    navigationController3.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                               [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                               [UIFont fontWithName:@"ArialMT" size:16.0], NSFontAttributeName,nil];
+    navigationController3.navigationBar.tintColor = [UIColor whiteColor];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[UIViewController new]];
+    [navigationController.navigationBar setTranslucent:NO];
+    navigationController.navigationBar.barTintColor = [UIColor mainGreenColor];
+    navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                               [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                               [UIFont fontWithName:@"ArialMT" size:16.0], NSFontAttributeName,nil];
+    navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    UINavigationController *navigationController4 = [[UINavigationController alloc] initWithRootViewController:[UIViewController new]];
+    [navigationController4.navigationBar setTranslucent:NO];
+    navigationController4.navigationBar.barTintColor = [UIColor mainGreenColor];
+    navigationController4.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                               [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                               [UIFont fontWithName:@"ArialMT" size:16.0], NSFontAttributeName,nil];
+    navigationController4.navigationBar.tintColor = [UIColor whiteColor];
+    
+    UINavigationController *navigationController5 = [[UINavigationController alloc] initWithRootViewController:[UIViewController new]];
+    [navigationController5.navigationBar setTranslucent:NO];
+    navigationController5.navigationBar.barTintColor = [UIColor mainGreenColor];
+    navigationController5.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                               [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                               [UIFont fontWithName:@"ArialMT" size:16.0], NSFontAttributeName,nil];
+    navigationController5.navigationBar.tintColor = [UIColor whiteColor];
+    
     self.tabBarController = [UITabBarController new];
-    NSArray<UIViewController *> *controllers = [[NSArray alloc] initWithObjects: menuVC, navigationController1, navigationController2, nil];
+    NSArray<UIViewController *> *controllers = [[NSArray alloc] initWithObjects: menuVC, navigationController, navigationController2, navigationController3, navigationController4, nil];
     self.tabBarController.viewControllers = controllers;
     UITabBarItem *item = self.tabBarController.tabBar.items[0];
-    item.title = @"MENU";
-    item.image = [UIImage imageNamed:@"home.png"];
+    item.image = [UIImage imageNamed:@"star"];
     UITabBarItem *item1 = self.tabBarController.tabBar.items[1];
-    item1.title = @"FAVORITE";
-    item1.image = [UIImage imageNamed:@"star.png"];
+    item1.image = [UIImage imageWithImage:[UIImage imageNamed:@"pin"] scaledToSize:CGSizeMake(30, 30)];
+    UITabBarItem *item2 = self.tabBarController.tabBar.items[2];
+    item2.image = [UIImage imageNamed:@"home"];
+    UITabBarItem *item3 = self.tabBarController.tabBar.items[3];
+    item3.image = [UIImage imageWithImage:[UIImage imageNamed:@"bell"] scaledToSize:CGSizeMake(30, 30)];
+    UITabBarItem *item4 = self.tabBarController.tabBar.items[4];
+    item4.image = [UIImage imageWithImage:[UIImage imageNamed:@"settings"] scaledToSize:CGSizeMake(30, 30)];
     self.tabBarController.tabBar.barTintColor = [UIColor mainGreenColor];
     self.tabBarController.tabBar.shadowImage = [UIImage new];
     self.tabBarController.tabBar.tintColor = [UIColor yellowColor];

@@ -28,6 +28,9 @@
 		08D2560D1EC6012300763F63 /* VacanciesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D2560C1EC6012300763F63 /* VacanciesTableViewCell.m */; };
 		08D2561D1EC649E900763F63 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D2561C1EC649E900763F63 /* SearchView.m */; };
 		08D256201EC656E500763F63 /* UIImageView+CZImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D2561F1EC656E500763F63 /* UIImageView+CZImageView.m */; };
+		08D256231EC65BE700763F63 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D256221EC65BE700763F63 /* NewsViewController.m */; };
+		08D256261EC65F8F00763F63 /* NewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D256251EC65F8F00763F63 /* NewsCollectionViewCell.m */; };
+		08D256291EC6734100763F63 /* UIImage+CZImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D256281EC6734100763F63 /* UIImage+CZImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,12 @@
 		08D2561C1EC649E900763F63 /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchView.m; path = Views/SearchView.m; sourceTree = "<group>"; };
 		08D2561E1EC656E500763F63 /* UIImageView+CZImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+CZImageView.h"; path = "Categories/UIImageView+CZImageView.h"; sourceTree = "<group>"; };
 		08D2561F1EC656E500763F63 /* UIImageView+CZImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+CZImageView.m"; path = "Categories/UIImageView+CZImageView.m"; sourceTree = "<group>"; };
+		08D256211EC65BE700763F63 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsViewController.h; path = Controllers/NewsViewController.h; sourceTree = "<group>"; };
+		08D256221EC65BE700763F63 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsViewController.m; path = Controllers/NewsViewController.m; sourceTree = "<group>"; };
+		08D256241EC65F8F00763F63 /* NewsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsCollectionViewCell.h; path = Views/NewsCollectionViewCell.h; sourceTree = "<group>"; };
+		08D256251EC65F8F00763F63 /* NewsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsCollectionViewCell.m; path = Views/NewsCollectionViewCell.m; sourceTree = "<group>"; };
+		08D256271EC6734100763F63 /* UIImage+CZImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+CZImage.h"; path = "Categories/UIImage+CZImage.h"; sourceTree = "<group>"; };
+		08D256281EC6734100763F63 /* UIImage+CZImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+CZImage.m"; path = "Categories/UIImage+CZImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +178,12 @@
 				08D2561C1EC649E900763F63 /* SearchView.m */,
 				08D2561E1EC656E500763F63 /* UIImageView+CZImageView.h */,
 				08D2561F1EC656E500763F63 /* UIImageView+CZImageView.m */,
+				08D256211EC65BE700763F63 /* NewsViewController.h */,
+				08D256221EC65BE700763F63 /* NewsViewController.m */,
+				08D256241EC65F8F00763F63 /* NewsCollectionViewCell.h */,
+				08D256251EC65F8F00763F63 /* NewsCollectionViewCell.m */,
+				08D256271EC6734100763F63 /* UIImage+CZImage.h */,
+				08D256281EC6734100763F63 /* UIImage+CZImage.m */,
 			);
 			path = CZAstana;
 			sourceTree = "<group>";
@@ -346,11 +361,14 @@
 				082B75851EBA5FB9006D9B8F /* MenuItemCollectionViewCell.m in Sources */,
 				08D256071EC5FD9B00763F63 /* VacanciesCollectionViewCell.m in Sources */,
 				082B757F1EBA4F99006D9B8F /* MenuView.m in Sources */,
+				08D256291EC6734100763F63 /* UIImage+CZImage.m in Sources */,
 				0892D1441EC49EFA00052F34 /* VacanciesViewController.m in Sources */,
 				082B758D1EBA6A3C006D9B8F /* UIFont+CZFont.m in Sources */,
 				082B75781EBA4D3F006D9B8F /* MenuViewController.m in Sources */,
 				08D256201EC656E500763F63 /* UIImageView+CZImageView.m in Sources */,
+				08D256261EC65F8F00763F63 /* NewsCollectionViewCell.m in Sources */,
 				082B75431EBA4840006D9B8F /* main.m in Sources */,
+				08D256231EC65BE700763F63 /* NewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,10 +14,12 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        CGFloat imageWidth = self.frame.size.width*0.8;
+        self.contentView.layer.cornerRadius = self.contentView.frame.size.height/2.0;
+        self.contentView.clipsToBounds = YES;
+        self.contentView.backgroundColor = [UIColor whiteColor];
+        
+        CGFloat imageWidth = self.frame.size.width*0.7;
         self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2.0-imageWidth/2.0, self.frame.size.height/2.0-imageWidth/2.0, imageWidth, imageWidth)];
-        self.imageView.layer.cornerRadius = self.imageView.frame.size.width/2.0;
-        self.imageView.clipsToBounds = YES;
         self.backgroundColor = [UIColor clearColor];
         
         [self.contentView addSubview:self.imageView];

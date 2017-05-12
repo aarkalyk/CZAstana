@@ -15,6 +15,8 @@
     self = [super initWithFrame:frame];
     
     if (self) {
+        self.iconNames = [[NSMutableArray alloc] initWithObjects:@"О центре", @"Новости", @"Статистика", @"соискателям", @"Вакансия", @"работодателям", @"Соц.рабоч. места", @"МП", @"проф.обучение", nil];
+        
         UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
         flowLayout.minimumLineSpacing = 10;
         flowLayout.minimumInteritemSpacing = 10;
@@ -36,13 +38,14 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 9;
+    return self.iconNames.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     MenuItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
     cell.backgroundColor = [UIColor whiteColor];
+    cell.imageView.image = [UIImage imageNamed:self.iconNames[indexPath.row]];
     
     return cell;
 }
