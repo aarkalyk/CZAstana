@@ -6,6 +6,7 @@
 //  Copyright © 2017 ARKALYK AKASH. All rights reserved.
 //
 
+#import "VacanciesViewController.h"
 #import "MenuViewController.h"
 #import "UIColor+CZColor.h"
 #import "AppDelegate.h"
@@ -31,8 +32,18 @@
                                                                [UIFont fontWithName:@"ArialMT" size:16.0], NSFontAttributeName,nil];
     navigationController1.navigationBar.tintColor = [UIColor whiteColor];
     
+    VacanciesViewController *vacanciesVC = [VacanciesViewController new];
+    vacanciesVC.title = @"Vacancies";
+    UINavigationController *navigationController2 = [[UINavigationController alloc] initWithRootViewController:vacanciesVC];
+    [navigationController2.navigationBar setTranslucent:NO];
+    navigationController2.navigationBar.barTintColor = [UIColor mainGreenColor];
+    navigationController2.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                               [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                               [UIFont fontWithName:@"ArialMT" size:16.0], NSFontAttributeName,nil];
+    navigationController2.navigationBar.tintColor = [UIColor whiteColor];
+    
     self.tabBarController = [UITabBarController new];
-    NSArray<UIViewController *> *controllers = [[NSArray alloc] initWithObjects: menuVC, navigationController1, nil];
+    NSArray<UIViewController *> *controllers = [[NSArray alloc] initWithObjects: menuVC, navigationController1, navigationController2, nil];
     self.tabBarController.viewControllers = controllers;
     UITabBarItem *item = self.tabBarController.tabBar.items[0];
     item.title = @"MENU";

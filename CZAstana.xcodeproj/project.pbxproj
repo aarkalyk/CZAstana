@@ -23,6 +23,10 @@
 		082B758A1EBA6A10006D9B8F /* Categories in Resources */ = {isa = PBXBuildFile; fileRef = 082B75891EBA6A10006D9B8F /* Categories */; };
 		082B758D1EBA6A3C006D9B8F /* UIFont+CZFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 082B758C1EBA6A3C006D9B8F /* UIFont+CZFont.m */; };
 		082B75901EBA77F4006D9B8F /* UIColor+CZColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 082B758F1EBA77F4006D9B8F /* UIColor+CZColor.m */; };
+		0892D1441EC49EFA00052F34 /* VacanciesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0892D1431EC49EFA00052F34 /* VacanciesViewController.m */; };
+		08D256071EC5FD9B00763F63 /* VacanciesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D256061EC5FD9B00763F63 /* VacanciesCollectionViewCell.m */; };
+		08D2560D1EC6012300763F63 /* VacanciesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D2560C1EC6012300763F63 /* VacanciesTableViewCell.m */; };
+		08D2561D1EC649E900763F63 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D2561C1EC649E900763F63 /* SearchView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +76,14 @@
 		082B758C1EBA6A3C006D9B8F /* UIFont+CZFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CZFont.m"; path = "Categories/UIFont+CZFont.m"; sourceTree = "<group>"; };
 		082B758E1EBA77F4006D9B8F /* UIColor+CZColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CZColor.h"; path = "Categories/UIColor+CZColor.h"; sourceTree = "<group>"; };
 		082B758F1EBA77F4006D9B8F /* UIColor+CZColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CZColor.m"; path = "Categories/UIColor+CZColor.m"; sourceTree = "<group>"; };
+		0892D1421EC49EFA00052F34 /* VacanciesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VacanciesViewController.h; path = Controllers/VacanciesViewController.h; sourceTree = "<group>"; };
+		0892D1431EC49EFA00052F34 /* VacanciesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VacanciesViewController.m; path = Controllers/VacanciesViewController.m; sourceTree = "<group>"; };
+		08D256051EC5FD9B00763F63 /* VacanciesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VacanciesCollectionViewCell.h; path = Views/VacanciesCollectionViewCell.h; sourceTree = "<group>"; };
+		08D256061EC5FD9B00763F63 /* VacanciesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VacanciesCollectionViewCell.m; path = Views/VacanciesCollectionViewCell.m; sourceTree = "<group>"; };
+		08D2560B1EC6012300763F63 /* VacanciesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VacanciesTableViewCell.h; path = Views/VacanciesTableViewCell.h; sourceTree = "<group>"; };
+		08D2560C1EC6012300763F63 /* VacanciesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VacanciesTableViewCell.m; path = Views/VacanciesTableViewCell.m; sourceTree = "<group>"; };
+		08D2561B1EC649E900763F63 /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchView.h; path = Views/SearchView.h; sourceTree = "<group>"; };
+		08D2561C1EC649E900763F63 /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchView.m; path = Views/SearchView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +156,14 @@
 				082B758C1EBA6A3C006D9B8F /* UIFont+CZFont.m */,
 				082B758E1EBA77F4006D9B8F /* UIColor+CZColor.h */,
 				082B758F1EBA77F4006D9B8F /* UIColor+CZColor.m */,
+				0892D1421EC49EFA00052F34 /* VacanciesViewController.h */,
+				0892D1431EC49EFA00052F34 /* VacanciesViewController.m */,
+				08D256051EC5FD9B00763F63 /* VacanciesCollectionViewCell.h */,
+				08D256061EC5FD9B00763F63 /* VacanciesCollectionViewCell.m */,
+				08D2560B1EC6012300763F63 /* VacanciesTableViewCell.h */,
+				08D2560C1EC6012300763F63 /* VacanciesTableViewCell.m */,
+				08D2561B1EC649E900763F63 /* SearchView.h */,
+				08D2561C1EC649E900763F63 /* SearchView.m */,
 			);
 			path = CZAstana;
 			sourceTree = "<group>";
@@ -313,11 +333,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08D2561D1EC649E900763F63 /* SearchView.m in Sources */,
 				082B75901EBA77F4006D9B8F /* UIColor+CZColor.m in Sources */,
 				082B75821EBA51F3006D9B8F /* MenuCollectionViewCell.m in Sources */,
+				08D2560D1EC6012300763F63 /* VacanciesTableViewCell.m in Sources */,
 				082B75461EBA4840006D9B8F /* AppDelegate.m in Sources */,
 				082B75851EBA5FB9006D9B8F /* MenuItemCollectionViewCell.m in Sources */,
+				08D256071EC5FD9B00763F63 /* VacanciesCollectionViewCell.m in Sources */,
 				082B757F1EBA4F99006D9B8F /* MenuView.m in Sources */,
+				0892D1441EC49EFA00052F34 /* VacanciesViewController.m in Sources */,
 				082B758D1EBA6A3C006D9B8F /* UIFont+CZFont.m in Sources */,
 				082B75781EBA4D3F006D9B8F /* MenuViewController.m in Sources */,
 				082B75431EBA4840006D9B8F /* main.m in Sources */,
@@ -548,6 +572,7 @@
 				082B756D1EBA4840006D9B8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		082B756E1EBA4840006D9B8F /* Build configuration list for PBXNativeTarget "CZAstanaTests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +581,7 @@
 				082B75701EBA4840006D9B8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		082B75711EBA4840006D9B8F /* Build configuration list for PBXNativeTarget "CZAstanaUITests" */ = {
 			isa = XCConfigurationList;
@@ -564,6 +590,7 @@
 				082B75731EBA4840006D9B8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
