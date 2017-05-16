@@ -46,6 +46,7 @@
     
     cell.backgroundColor = [UIColor whiteColor];
     cell.imageView.image = [UIImage imageNamed:self.iconNames[indexPath.row]];
+    cell.titleTextView.text = self.iconNames[indexPath.row];
     
     return cell;
 }

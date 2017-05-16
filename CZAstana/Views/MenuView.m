@@ -17,8 +17,12 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        CGFloat imageSize = self.frame.size.width*0.2;
-        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2.0-imageSize/2.0, 50, imageSize, imageSize)];
+        UIView *statusBarBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 20)];
+        statusBarBackgroundView.backgroundColor = [UIColor mainGreenColor];
+        [self addSubview:statusBarBackgroundView];
+        
+        CGFloat imageSize = self.frame.size.width*0.25;
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2.0-imageSize/2.0, CGRectGetMaxY(statusBarBackgroundView.frame)+15, imageSize, imageSize)];
         self.imageView.image = [UIImage imageNamed:@"logo.png"];
         
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.imageView.frame)+10, self.frame.size.width, 25)];
