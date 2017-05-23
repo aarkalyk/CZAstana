@@ -7,8 +7,10 @@
 //
 
 #import "VacanciesViewController.h"
+#import "AboutViewController.h"
 #import "MenuViewController.h"
 #import "NewsViewController.h"
+#import "FavViewController.h"
 #import "UIColor+CZColor.h"
 #import "UIImage+CZImage.h"
 #import "AppDelegate.h"
@@ -34,7 +36,7 @@
                                                                [UIFont fontWithName:@"ArialMT" size:16.0], NSFontAttributeName,nil];
     navigationController1.navigationBar.tintColor = [UIColor whiteColor];
     
-    VacanciesViewController *vacanciesVC = [VacanciesViewController new];
+    FavViewController *vacanciesVC = [FavViewController new];
     //vacanciesVC.title = @"Vacancies";
     UINavigationController *navigationController2 = [[UINavigationController alloc] initWithRootViewController:vacanciesVC];
     [navigationController2.navigationBar setTranslucent:NO];
@@ -54,7 +56,7 @@
                                                                [UIFont fontWithName:@"ArialMT" size:16.0], NSFontAttributeName,nil];
     navigationController3.navigationBar.tintColor = [UIColor whiteColor];
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[UIViewController new]];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[AboutViewController new]];
     [navigationController.navigationBar setTranslucent:NO];
     navigationController.navigationBar.barTintColor = [UIColor mainGreenColor];
     navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -79,7 +81,7 @@
     navigationController5.navigationBar.tintColor = [UIColor whiteColor];
     
     self.tabBarController = [UITabBarController new];
-    NSArray<UIViewController *> *controllers = [[NSArray alloc] initWithObjects: navigationController1, navigationController, navigationController2, navigationController3, navigationController4, nil];
+    NSArray<UIViewController *> *controllers = [[NSArray alloc] initWithObjects: navigationController2, navigationController, navigationController1, navigationController3, navigationController4, nil];
     self.tabBarController.viewControllers = controllers;
     UITabBarItem *item = self.tabBarController.tabBar.items[0];
     item.image = [UIImage imageNamed:@"star"];
@@ -100,6 +102,7 @@
     self.tabBarController.tabBar.shadowImage = [UIImage new];
     self.tabBarController.tabBar.tintColor = [UIColor yellowColor];
     self.tabBarController.tabBar.unselectedItemTintColor = [UIColor whiteColor];
+    self.tabBarController.selectedIndex = 2;
     
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];

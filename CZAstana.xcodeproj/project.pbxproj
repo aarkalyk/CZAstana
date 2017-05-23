@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081C84F41ED40903006B1A5E /* FavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 081C84F31ED40903006B1A5E /* FavViewController.m */; };
+		081C84F71ED40A67006B1A5E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 081C84F61ED40A67006B1A5E /* AboutViewController.m */; };
+		081C84FA1ED40BC5006B1A5E /* AboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 081C84F91ED40BC5006B1A5E /* AboutTableViewCell.m */; };
+		081C84FD1ED42141006B1A5E /* DayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 081C84FC1ED42141006B1A5E /* DayCollectionViewCell.m */; };
 		082B75431EBA4840006D9B8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 082B75421EBA4840006D9B8F /* main.m */; };
 		082B75461EBA4840006D9B8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 082B75451EBA4840006D9B8F /* AppDelegate.m */; };
 		082B754E1EBA4840006D9B8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082B754D1EBA4840006D9B8F /* Assets.xcassets */; };
@@ -52,6 +56,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		081C84F21ED40903006B1A5E /* FavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavViewController.h; path = Controllers/FavViewController.h; sourceTree = "<group>"; };
+		081C84F31ED40903006B1A5E /* FavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavViewController.m; path = Controllers/FavViewController.m; sourceTree = "<group>"; };
+		081C84F51ED40A67006B1A5E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = Controllers/AboutViewController.h; sourceTree = "<group>"; };
+		081C84F61ED40A67006B1A5E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = Controllers/AboutViewController.m; sourceTree = "<group>"; };
+		081C84F81ED40BC5006B1A5E /* AboutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutTableViewCell.h; path = Views/AboutTableViewCell.h; sourceTree = "<group>"; };
+		081C84F91ED40BC5006B1A5E /* AboutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutTableViewCell.m; path = Views/AboutTableViewCell.m; sourceTree = "<group>"; };
+		081C84FB1ED42141006B1A5E /* DayCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DayCollectionViewCell.h; path = Views/DayCollectionViewCell.h; sourceTree = "<group>"; };
+		081C84FC1ED42141006B1A5E /* DayCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DayCollectionViewCell.m; path = Views/DayCollectionViewCell.m; sourceTree = "<group>"; };
 		082B753E1EBA4840006D9B8F /* CZAstana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CZAstana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		082B75421EBA4840006D9B8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		082B75441EBA4840006D9B8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -189,6 +201,14 @@
 				08D256281EC6734100763F63 /* UIImage+CZImage.m */,
 				08FEEEBC1ED2D93000B1D139 /* InternshipsViewController.h */,
 				08FEEEBD1ED2D93000B1D139 /* InternshipsViewController.m */,
+				081C84F21ED40903006B1A5E /* FavViewController.h */,
+				081C84F31ED40903006B1A5E /* FavViewController.m */,
+				081C84F51ED40A67006B1A5E /* AboutViewController.h */,
+				081C84F61ED40A67006B1A5E /* AboutViewController.m */,
+				081C84F81ED40BC5006B1A5E /* AboutTableViewCell.h */,
+				081C84F91ED40BC5006B1A5E /* AboutTableViewCell.m */,
+				081C84FB1ED42141006B1A5E /* DayCollectionViewCell.h */,
+				081C84FC1ED42141006B1A5E /* DayCollectionViewCell.m */,
 			);
 			path = CZAstana;
 			sourceTree = "<group>";
@@ -360,8 +380,10 @@
 			files = (
 				08D2561D1EC649E900763F63 /* SearchView.m in Sources */,
 				082B75901EBA77F4006D9B8F /* UIColor+CZColor.m in Sources */,
+				081C84F41ED40903006B1A5E /* FavViewController.m in Sources */,
 				082B75821EBA51F3006D9B8F /* MenuCollectionViewCell.m in Sources */,
 				08D2560D1EC6012300763F63 /* VacanciesTableViewCell.m in Sources */,
+				081C84FD1ED42141006B1A5E /* DayCollectionViewCell.m in Sources */,
 				082B75461EBA4840006D9B8F /* AppDelegate.m in Sources */,
 				082B75851EBA5FB9006D9B8F /* MenuItemCollectionViewCell.m in Sources */,
 				08D256071EC5FD9B00763F63 /* VacanciesCollectionViewCell.m in Sources */,
@@ -370,6 +392,8 @@
 				08D256291EC6734100763F63 /* UIImage+CZImage.m in Sources */,
 				0892D1441EC49EFA00052F34 /* VacanciesViewController.m in Sources */,
 				082B758D1EBA6A3C006D9B8F /* UIFont+CZFont.m in Sources */,
+				081C84FA1ED40BC5006B1A5E /* AboutTableViewCell.m in Sources */,
+				081C84F71ED40A67006B1A5E /* AboutViewController.m in Sources */,
 				082B75781EBA4D3F006D9B8F /* MenuViewController.m in Sources */,
 				08D256201EC656E500763F63 /* UIImageView+CZImageView.m in Sources */,
 				08D256261EC65F8F00763F63 /* NewsCollectionViewCell.m in Sources */,
