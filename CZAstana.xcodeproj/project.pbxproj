@@ -31,6 +31,7 @@
 		08D256231EC65BE700763F63 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D256221EC65BE700763F63 /* NewsViewController.m */; };
 		08D256261EC65F8F00763F63 /* NewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D256251EC65F8F00763F63 /* NewsCollectionViewCell.m */; };
 		08D256291EC6734100763F63 /* UIImage+CZImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D256281EC6734100763F63 /* UIImage+CZImage.m */; };
+		08FEEEBE1ED2D93000B1D139 /* InternshipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FEEEBD1ED2D93000B1D139 /* InternshipsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		08D256251EC65F8F00763F63 /* NewsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsCollectionViewCell.m; path = Views/NewsCollectionViewCell.m; sourceTree = "<group>"; };
 		08D256271EC6734100763F63 /* UIImage+CZImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+CZImage.h"; path = "Categories/UIImage+CZImage.h"; sourceTree = "<group>"; };
 		08D256281EC6734100763F63 /* UIImage+CZImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+CZImage.m"; path = "Categories/UIImage+CZImage.m"; sourceTree = "<group>"; };
+		08FEEEBC1ED2D93000B1D139 /* InternshipsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InternshipsViewController.h; path = Controllers/InternshipsViewController.h; sourceTree = "<group>"; };
+		08FEEEBD1ED2D93000B1D139 /* InternshipsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InternshipsViewController.m; path = Controllers/InternshipsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +187,8 @@
 				08D256251EC65F8F00763F63 /* NewsCollectionViewCell.m */,
 				08D256271EC6734100763F63 /* UIImage+CZImage.h */,
 				08D256281EC6734100763F63 /* UIImage+CZImage.m */,
+				08FEEEBC1ED2D93000B1D139 /* InternshipsViewController.h */,
+				08FEEEBD1ED2D93000B1D139 /* InternshipsViewController.m */,
 			);
 			path = CZAstana;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				082B75461EBA4840006D9B8F /* AppDelegate.m in Sources */,
 				082B75851EBA5FB9006D9B8F /* MenuItemCollectionViewCell.m in Sources */,
 				08D256071EC5FD9B00763F63 /* VacanciesCollectionViewCell.m in Sources */,
+				08FEEEBE1ED2D93000B1D139 /* InternshipsViewController.m in Sources */,
 				082B757F1EBA4F99006D9B8F /* MenuView.m in Sources */,
 				08D256291EC6734100763F63 /* UIImage+CZImage.m in Sources */,
 				0892D1441EC49EFA00052F34 /* VacanciesViewController.m in Sources */,

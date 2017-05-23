@@ -7,16 +7,19 @@
 //
 
 #import "MenuItemCollectionViewCell.h"
+#import "InternshipsViewController.h"
+#import "VacanciesViewController.h"
 #import "MenuCollectionViewCell.h"
+#import "NewsViewController.h"
 
 @implementation MenuCollectionViewCell
+
+@synthesize delegate;
 
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     
     if (self) {
-        self.iconNames = [[NSMutableArray alloc] initWithObjects:@"О центре", @"Новости", @"Статистика", @"соискателям", @"Вакансия", @"работодателям", @"Соц.рабоч. места", @"МП", @"проф.обучение", nil];
-        
         UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
         flowLayout.minimumLineSpacing = 10;
         flowLayout.minimumInteritemSpacing = 10;
@@ -49,6 +52,18 @@
     cell.titleTextView.text = self.iconNames[indexPath.row];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.iconNames.count > 3) {
+        if (indexPath.row == 1) {
+            [self.delegate pushVC:[NewsViewController new]];
+        }else if(indexPath.row == 4){
+            [self.delegate pushVC:[VacanciesViewController new]];
+        }else if(indexPath.row == 7){
+            [self.delegate pushVC:[InternshipsViewController new]];
+        }
+    }
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{

@@ -79,7 +79,7 @@
     navigationController5.navigationBar.tintColor = [UIColor whiteColor];
     
     self.tabBarController = [UITabBarController new];
-    NSArray<UIViewController *> *controllers = [[NSArray alloc] initWithObjects: menuVC, navigationController, navigationController2, navigationController3, navigationController4, nil];
+    NSArray<UIViewController *> *controllers = [[NSArray alloc] initWithObjects: navigationController1, navigationController, navigationController2, navigationController3, navigationController4, nil];
     self.tabBarController.viewControllers = controllers;
     UITabBarItem *item = self.tabBarController.tabBar.items[0];
     item.image = [UIImage imageNamed:@"star"];

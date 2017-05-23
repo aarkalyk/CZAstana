@@ -6,12 +6,21 @@
 //  Copyright © 2017 ARKALYK AKASH. All rights reserved.
 //
 
+#import "MenuCollectionViewCell.h"
 #import <UIKit/UIKit.h>
 
-@interface MenuView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@protocol MenuViewDelegate <NSObject>
+
+-(void)pushVC:(UIViewController *)VC;
+
+@end
+
+@interface MenuView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MenuItemDelegate>
 
 @property (nonatomic) UIImageView *imageView;
 @property (nonatomic) UILabel *titleLabel;
 @property (nonatomic) UICollectionView *collectionView;
+
+@property (nonatomic) id <MenuViewDelegate> delegate;
 
 @end

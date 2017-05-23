@@ -9,7 +9,7 @@
 #import "MenuViewController.h"
 #import "MenuView.h"
 
-@interface MenuViewController ()
+@interface MenuViewController ()<MenuViewDelegate>
 
 @property (nonatomic) MenuView *menuView;
 
@@ -23,10 +23,21 @@
     [self setUp];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBarHidden = YES;
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = NO;
+}
+
 -(void)setUp{
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.menuView = [[MenuView alloc] initWithFrame:self.view.frame];
+    self.menuView.delegate = self;
     [self.view addSubview:self.menuView];
 }
 
@@ -35,14 +46,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - MenuView delegate
+-(void)pushVC:(UIViewController *)VC{
+    [self.navigationController pushViewController:VC animated:YES];
 }
-*/
 
 @end

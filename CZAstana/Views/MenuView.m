@@ -13,6 +13,8 @@
 
 @implementation MenuView
 
+@synthesize delegate;
+
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     
@@ -65,6 +67,12 @@
     return self;
 }
 
+#pragma mark - MenuItemDelegate
+-(void)pushVC:(UIViewController *)VC{
+    NSLog(@"\nin menuView!");
+    [self.delegate pushVC:VC];
+}
+
 #pragma mark - CollectionView delegate
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -77,7 +85,13 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     MenuCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
+    cell.delegate = self;
     cell.backgroundColor = [UIColor clearColor];
+    if (indexPath.row == 0) {
+        cell.iconNames = [[NSMutableArray alloc] initWithObjects:@"О центре", @"Новости", @"Статистика", @"соискателям", @"Вакансия", @"работодателям", @"Соц.рабоч. места", @"МП", @"проф.обучение", nil];
+    }else{
+        cell.iconNames = [[NSMutableArray alloc] initWithObjects:@"Тест", @"Полезная информация", @"О приложении", nil];
+    }
     
     return cell;
 }

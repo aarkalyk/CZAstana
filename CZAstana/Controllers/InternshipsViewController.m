@@ -1,11 +1,12 @@
 //
-//  VacanciesViewController.m
+//  InternshipsViewController.m
 //  CZAstana
 //
-//  Created by ARKALYK AKASH on 5/11/17.
+//  Created by ARKALYK AKASH on 5/22/17.
 //  Copyright © 2017 ARKALYK AKASH. All rights reserved.
 //
 
+#import "InternshipsViewController.h"
 #import "VacanciesCollectionViewCell.h"
 #import "VacanciesViewController.h"
 #import "UIImageView+CZImageView.h"
@@ -13,7 +14,7 @@
 #import "UIColor+CZColor.h"
 #import "SearchView.h"
 
-@interface VacanciesViewController ()<UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface InternshipsViewController ()<UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic) UICollectionView *collectionView;
 @property (nonatomic) UITableView *tableView;
@@ -22,7 +23,7 @@
 
 @end
 
-@implementation VacanciesViewController
+@implementation InternshipsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,21 +53,10 @@
     self.categoryIconNames = [[NSMutableArray alloc] initWithObjects:@"bus", @"doctor", @"engineer", @"law", @"theater", @"bus", @"doctor", @"engineer", @"law", @"theater", nil];
     
     self.searchView = [[SearchView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    self.searchView.searchBar.frame = self.searchView.frame;
     [self.view addSubview:self.searchView];
     
-    UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
-    flowLayout.minimumLineSpacing = 5;
-    flowLayout.minimumInteritemSpacing = 5;
-    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.searchView.frame), self.view.frame.size.width, 50) collectionViewLayout:flowLayout];
-    self.collectionView.backgroundColor = [UIColor customLightGrayColor];
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-    self.collectionView.showsHorizontalScrollIndicator = NO;
-    [self.collectionView registerClass:[VacanciesCollectionViewCell class] forCellWithReuseIdentifier:@"CVCell"];
-    [self.view addSubview:self.collectionView];
-    
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.collectionView.frame), self.view.frame.size.width, self.view.frame.size.height - CGRectGetMaxY(self.collectionView.frame)) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.searchView.frame), self.view.frame.size.width, self.view.frame.size.height - CGRectGetMaxY(self.searchView.frame)) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[VacanciesTableViewCell class] forCellReuseIdentifier:@"Cell"];
@@ -184,3 +174,4 @@
 }
 
 @end
+

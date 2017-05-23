@@ -31,7 +31,7 @@
     flowLayout.minimumLineSpacing = 20;
     flowLayout.minimumInteritemSpacing = 20;
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64) collectionViewLayout:flowLayout];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.collectionView.backgroundColor = [UIColor clearColor];

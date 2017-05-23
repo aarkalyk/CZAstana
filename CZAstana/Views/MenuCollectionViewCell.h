@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MenuItemDelegate <NSObject>
+
+-(void)pushVC:(UIViewController *)VC;
+
+@end
+
 @interface MenuCollectionViewCell : UICollectionViewCell <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic) UICollectionView *collectionView;
-
 @property (nonatomic) NSMutableArray *iconNames;
 @property (nonatomic) NSMutableArray *titles;
+
+@property (nonatomic) id <MenuItemDelegate> delegate;
 
 @end
