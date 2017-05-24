@@ -1,0 +1,21 @@
+PODS:
+  - BEMSimpleLineGraph (4.1)
+  - Bolts/Tasks (1.8.4)
+  - Parse (1.14.2):
+    - Bolts/Tasks (~> 1.8)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - BEMSimpleLineGraph
+  - Parse
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  BEMSimpleLineGraph: 44fd451f27f8e9cf96f2da5bea27603093576dd1
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: e56281265020b181db02123df5ac2e54c4efb897
+
+COCOAPODS: 1.2.0

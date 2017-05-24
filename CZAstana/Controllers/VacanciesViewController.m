@@ -6,12 +6,15 @@
 //  Copyright © 2017 ARKALYK AKASH. All rights reserved.
 //
 
+#import "DetailedVacancyViewController.h"
 #import "VacanciesCollectionViewCell.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 #import "VacanciesViewController.h"
 #import "UIImageView+CZImageView.h"
 #import "VacanciesTableViewCell.h"
 #import "UIColor+CZColor.h"
 #import "SearchView.h"
+#import "Vacancy.h"
 
 @interface VacanciesViewController ()<UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -19,6 +22,7 @@
 @property (nonatomic) UITableView *tableView;
 @property (nonatomic) SearchView *searchView;
 @property (nonatomic) NSMutableArray *categoryIconNames;
+@property (nonatomic) NSMutableArray *vacancies;
 
 @end
 
@@ -72,6 +76,13 @@
     [self.tableView registerClass:[VacanciesTableViewCell class] forCellReuseIdentifier:@"Cell"];
     [self.view addSubview:self.tableView];
     
+    [SVProgressHUD show];
+    self.vacancies = [[NSMutableArray alloc] init];
+    [Vacancy getAllVacanciesWithClosure:^(NSMutableArray *vacancies) {
+        self.vacancies = vacancies;
+        [self.tableView reloadData];
+        [SVProgressHUD dismiss];
+    }];
 }
 
 #pragma mark - CollectionView delegate
@@ -108,21 +119,41 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.vacancies.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     VacanciesTableViewCell *cell = (VacanciesTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    cell.titleLabel.text = @"iOS developer";
-    cell.dateLabel.text = @"May 4th";
-    cell.salaryLabel.text = @"3000$";
+    Vacancy *vacancy = self.vacancies[indexPath.row];
+    
+    cell.titleLabel.text = vacancy.nameKaz;
+    cell.dateLabel.text = vacancy.createdAt;
+    cell.salaryLabel.text = [NSString stringWithFormat:@"%i теңге", vacancy.salary];
+    cell.starImageView.image = [UIImage imageNamed:@"star_gray"];
+    cell.button.tag = indexPath.row;
+    [cell.button addTarget:self action:@selector(starButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 55;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //VacanciesTableViewCell *cell = (VacanciesTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    //[UIImageView setColor:[UIColor customGoldColor] toImageView:cell.starImageView];
+    DetailedVacancyViewController *VC = [DetailedVacancyViewController new];
+    VC.vacancy = self.vacancies[indexPath.row];
+    //[self.navigationController pushViewController:VC animated:YES];
+    VC.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    [self presentViewController:VC animated:YES completion:nil];
+}
+
+-(void)starButtonPressed:(UIButton *)sender{
+    VacanciesTableViewCell *cell = (VacanciesTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:sender.tag inSection:0]];
+    cell.starImageView.image = [UIImage imageNamed:@"star1"];
 }
 
 - (void)didReceiveMemoryWarning {

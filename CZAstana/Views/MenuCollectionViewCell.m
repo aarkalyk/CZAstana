@@ -10,7 +10,9 @@
 #import "InternshipsViewController.h"
 #import "VacanciesViewController.h"
 #import "MenuCollectionViewCell.h"
+#import "StatsViewController.h"
 #import "NewsViewController.h"
+#import "TestViewController.h"
 
 @implementation MenuCollectionViewCell
 
@@ -62,6 +64,12 @@
             [self.delegate pushVC:[VacanciesViewController new]];
         }else if(indexPath.row == 7){
             [self.delegate pushVC:[InternshipsViewController new]];
+        }else if(indexPath.row == 2){
+            [self.delegate pushVC:[StatsViewController new]];
+        }
+    }else{
+        if (indexPath.row == 0) {
+            [self.delegate pushVC:[TestViewController new]];
         }
     }
 }

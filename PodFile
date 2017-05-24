@@ -1,0 +1,12 @@
+# Uncomment this line to define a global platform for your project
+inhibit_all_warnings!
+platform :ios, '10.0'
+use_frameworks!
+
+target 'CZAstana' do
+
+pod 'Parse'
+pod 'SVProgressHUD'
+pod 'BEMSimpleLineGraph'
+
+end

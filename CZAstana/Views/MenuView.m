@@ -19,12 +19,8 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        UIView *statusBarBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 20)];
-        statusBarBackgroundView.backgroundColor = [UIColor mainGreenColor];
-        [self addSubview:statusBarBackgroundView];
-        
-        CGFloat imageSize = self.frame.size.width*0.25;
-        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2.0-imageSize/2.0, CGRectGetMaxY(statusBarBackgroundView.frame)+15, imageSize, imageSize)];
+        CGFloat imageSize = self.frame.size.width*0.16;
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2.0-imageSize/2.0, 15, imageSize, imageSize)];
         self.imageView.image = [UIImage imageNamed:@"logo.png"];
         
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.imageView.frame)+10, self.frame.size.width, 25)];
@@ -60,7 +56,15 @@
         self.collectionView.delegate = self;
         self.collectionView.dataSource = self;
         
+        self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.collectionView.frame)+5, self.frame.size.width, 10)];
+        self.pageControl.center = CGPointMake(self.center.x, self.pageControl.center.y);
+        self.pageControl.currentPageIndicatorTintColor = [UIColor mainGreenColor];
+        self.pageControl.pageIndicatorTintColor = [UIColor customLightGrayColor];
+        self.pageControl.numberOfPages = 2;
+        self.pageControl.currentPage = 0;
+        
         [self addSubview:self.collectionView];
+        [self addSubview:self.pageControl];
         [self addSubview:self.imageView];
     }
     
@@ -100,6 +104,12 @@
     return  collectionView.frame.size;
 }
 
-
+-(void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        self.pageControl.currentPage = 1;
+    }else{
+        self.pageControl.currentPage = 0;
+    }
+}
 
 @end

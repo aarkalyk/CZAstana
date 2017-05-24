@@ -14,6 +14,7 @@
 #import "UIColor+CZColor.h"
 #import "UIImage+CZImage.h"
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -23,6 +24,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //Parse
+    [Parse initializeWithConfiguration: [ParseClientConfiguration configurationWithBlock: ^ (id < ParseMutableClientConfiguration > _Nonnull configuration) {
+        configuration.applicationId = @"5NC2vmD351UmaKpZEgKJBDDeIKIxRtQojIx4mRyg";
+        configuration.clientKey = @"6Vu2kR5yrwLelmyZBkL0EPBOcrH8DN1LF3LtOG6L";
+        configuration.server = @"https://parseapi.back4app.com/";
+        configuration.localDatastoreEnabled = YES;
+    }]];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
@@ -98,10 +107,10 @@
     UITabBarItem *item4 = self.tabBarController.tabBar.items[4];
     item4.image = [UIImage imageWithImage:[UIImage imageNamed:@"settings"] scaledToSize:CGSizeMake(30, 30)];
     item4.title = @"Настройки";
-    self.tabBarController.tabBar.barTintColor = [UIColor mainGreenColor];
+    self.tabBarController.tabBar.barTintColor = [UIColor whiteColor];
     self.tabBarController.tabBar.shadowImage = [UIImage new];
-    self.tabBarController.tabBar.tintColor = [UIColor yellowColor];
-    self.tabBarController.tabBar.unselectedItemTintColor = [UIColor whiteColor];
+    self.tabBarController.tabBar.tintColor = [UIColor customGoldColor];
+    self.tabBarController.tabBar.unselectedItemTintColor = [UIColor mainGreenColor];
     self.tabBarController.selectedIndex = 2;
     
     self.window.rootViewController = self.tabBarController;

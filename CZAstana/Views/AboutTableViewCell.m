@@ -16,6 +16,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         CGFloat height = 55.0;
         CGFloat titleHeight = 20;
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, height/2.0-titleHeight, self.contentView.frame.size.width-20, titleHeight)];

@@ -11,6 +11,7 @@
 @interface VacanciesTableViewCell : UITableViewCell
 
 @property (nonatomic) UIImageView *starImageView;
+@property (nonatomic) UIButton *button;
 @property (nonatomic) UILabel *titleLabel;
 @property (nonatomic) UILabel *salaryLabel;
 @property (nonatomic) UILabel *dateLabel;

@@ -20,6 +20,7 @@
 @property (nonatomic) UIImageView *imageView;
 @property (nonatomic) UILabel *titleLabel;
 @property (nonatomic) UICollectionView *collectionView;
+@property (nonatomic) UIPageControl *pageControl;
 
 @property (nonatomic) id <MenuViewDelegate> delegate;
 

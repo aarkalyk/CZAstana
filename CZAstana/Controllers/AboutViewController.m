@@ -93,6 +93,9 @@
     
     if (indexPath.row > 1) {
         cell.infoLabel.textColor = [UIColor customDarkGreenColor];
+        if (indexPath.row == 2) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://astana.gov.kz"] options:[NSDictionary dictionaryWithObject:@"" forKey:@""] completionHandler:nil];
+        }
     }else{
         cell.infoLabel.textColor = [UIColor blackColor];
     }

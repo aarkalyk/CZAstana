@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import <Parse/Parse.h>
 #import "MenuView.h"
 
 @interface MenuViewController ()<MenuViewDelegate>
@@ -20,17 +21,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"Меню";
+    
+    [self getDataFromParse];
+    
     [self setUp];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-    self.navigationController.navigationBarHidden = YES;
-}
-
--(void)viewWillDisappear:(BOOL)animated{
-    self.navigationController.navigationBarHidden = NO;
+-(void)getDataFromParse{
+    PFQuery *query = [PFQuery queryWithClassName:@"Vacancy"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (!error) {
+            for (PFObject *object in objects) {
+                NSLog(@"\n %@ \n", object[@"nameKaz"]);
+            }
+        }
+    }];
 }
 
 -(void)setUp{
