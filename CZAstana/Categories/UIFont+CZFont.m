@@ -22,4 +22,8 @@
     return [UIFont fontWithName:@"Avenir-Black" size:size];
 }
 
++(UIFont *)futuraExtraBoldWithSize:(CGFloat)size{
+    return [UIFont fontWithName:@"Futura-CondensedExtraBold" size:size];
+}
+
 @end

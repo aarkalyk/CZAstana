@@ -19,7 +19,7 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        CGFloat imageSize = self.frame.size.width*0.16;
+        CGFloat imageSize = self.frame.size.width*0.23;
         self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2.0-imageSize/2.0, 15, imageSize, imageSize)];
         self.imageView.image = [UIImage imageNamed:@"logo.png"];
         
@@ -36,7 +36,7 @@
         self.titleLabel.textColor = [UIColor whiteColor];
         self.titleLabel.layer.cornerRadius = 5.0f;
         self.titleLabel.clipsToBounds = YES;
-        [self addSubview:self.titleLabel];
+        //[self addSubview:self.titleLabel];
         
         CAGradientLayer *gradientMask = [CAGradientLayer layer];
         gradientMask.frame = self.titleLabel.bounds;
@@ -48,7 +48,7 @@
         flowLayout.minimumLineSpacing = 0;
         flowLayout.minimumInteritemSpacing = 0;
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.titleLabel.frame)-10, self.frame.size.width, self.frame.size.width+20) collectionViewLayout:flowLayout];
+        self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.imageView.frame)-10, self.frame.size.width, self.frame.size.width+20) collectionViewLayout:flowLayout];
         self.collectionView.backgroundColor = [UIColor clearColor];
         self.collectionView.showsHorizontalScrollIndicator = NO;
         self.collectionView.pagingEnabled = YES;
@@ -63,6 +63,12 @@
         self.pageControl.numberOfPages = 2;
         self.pageControl.currentPage = 0;
         
+        self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.frame.size.height-300, self.frame.size.width+40, 300)];
+        self.backgroundImageView.center = CGPointMake(self.center.x, self.backgroundImageView.center.y);
+        self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.backgroundImageView.image = [UIImage imageNamed:@"background"];
+        
+        [self addSubview:self.backgroundImageView];
         [self addSubview:self.collectionView];
         [self addSubview:self.pageControl];
         [self addSubview:self.imageView];

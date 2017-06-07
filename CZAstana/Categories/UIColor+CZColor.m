@@ -11,7 +11,15 @@
 @implementation UIColor (CZColor)
 
 +(UIColor *)mainGreenColor{
-    return [UIColor colorWithRed:1/255.0 green:230/255.0 blue:141/255.0 alpha:1.0f];
+    return [UIColor colorWithRed:41/255.0 green:52/255.0 blue:114/255.0 alpha:1.0f];
+}
+
++(UIColor *)secondaryColor{
+    return [UIColor colorWithRed:7/255.0 green:171/255.0 blue:222/255.0 alpha:1.0f];
+}
+
++(UIColor *)ultraLightGray{
+    return [UIColor colorWithRed:248/255.0 green:248/255.0 blue:248/255.0 alpha:1.0f];
 }
 
 +(UIColor *)customLightGrayColor{
@@ -25,6 +33,11 @@
 +(UIColor *)customGoldColor{
     return [UIColor colorWithRed:239/255.0 green:206/255.0 blue:74/255.0 alpha:1.0f];
 }
+
++(UIColor *)newLightBlueColor{
+    return [UIColor colorWithRed:7/255.0 green:183/255.0 blue:244/255.0 alpha:1.0f];
+}
+
 
 +(UIColor *)customLightBlue1{
     return [UIColor colorWithRed:177/255.0f green:208/255.0f blue:234/255.0f alpha:1.0f];

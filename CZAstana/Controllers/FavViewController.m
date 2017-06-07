@@ -83,7 +83,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return 4;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -91,7 +91,7 @@
     
     cell.titleLabel.text = @"iOS developer";
     cell.dateLabel.text = @"May 4th";
-    cell.salaryLabel.text = @"3000$";
+    cell.salaryLabel.text = @"Номер 3";
     
     return cell;
 }

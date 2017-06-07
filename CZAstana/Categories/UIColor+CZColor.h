@@ -11,9 +11,12 @@
 @interface UIColor (CZColor)
 
 +(UIColor *)mainGreenColor;
++(UIColor *)secondaryColor;
++(UIColor *)ultraLightGray;
 +(UIColor *)customLightGrayColor;
 +(UIColor *)customDarkGreenColor;
 +(UIColor *)customGoldColor;
++(UIColor *)newLightBlueColor;
 
 //OLD
 +(UIColor *)customLightBlue1;

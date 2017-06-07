@@ -11,5 +11,6 @@
 @interface VacanciesCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic) UIImageView *imageView;
+@property (nonatomic) UILabel *numberLabel;
 
 @end

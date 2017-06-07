@@ -27,6 +27,8 @@
 		082B758A1EBA6A10006D9B8F /* Categories in Resources */ = {isa = PBXBuildFile; fileRef = 082B75891EBA6A10006D9B8F /* Categories */; };
 		082B758D1EBA6A3C006D9B8F /* UIFont+CZFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 082B758C1EBA6A3C006D9B8F /* UIFont+CZFont.m */; };
 		082B75901EBA77F4006D9B8F /* UIColor+CZColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 082B758F1EBA77F4006D9B8F /* UIColor+CZColor.m */; };
+		087528E91ED7E33500313CA0 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 087528E81ED7E33500313CA0 /* TutorialViewController.m */; };
+		087528EC1ED7E9B400313CA0 /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 087528EB1ED7E9B300313CA0 /* ImageCollectionViewCell.m */; };
 		0892D1441EC49EFA00052F34 /* VacanciesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0892D1431EC49EFA00052F34 /* VacanciesViewController.m */; };
 		0898577A1ED4896B00F6F8F9 /* DetailedVacancyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 089857791ED4896B00F6F8F9 /* DetailedVacancyViewController.m */; };
 		08A155C51ED549FD00779E0A /* Vacancy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A155C41ED549FD00779E0A /* Vacancy.m */; };
@@ -38,6 +40,8 @@
 		08A155D81ED5908A00779E0A /* Internship.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A155D71ED5908A00779E0A /* Internship.m */; };
 		08A155DB1ED592F800779E0A /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A155DA1ED592F800779E0A /* StatsViewController.m */; };
 		08A155DE1ED5D78200779E0A /* HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A155DD1ED5D78200779E0A /* HelperMethods.m */; };
+		08BB53481EE6CF4C00896772 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BB53471EE6CF4C00896772 /* FilterViewController.m */; };
+		08D0B5C31EDF4FE600AB06EB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D0B5C21EDF4FE600AB06EB /* MapViewController.m */; };
 		08D256071EC5FD9B00763F63 /* VacanciesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D256061EC5FD9B00763F63 /* VacanciesCollectionViewCell.m */; };
 		08D2560D1EC6012300763F63 /* VacanciesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D2560C1EC6012300763F63 /* VacanciesTableViewCell.m */; };
 		08D2561D1EC649E900763F63 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D2561C1EC649E900763F63 /* SearchView.m */; };
@@ -104,6 +108,10 @@
 		082B758C1EBA6A3C006D9B8F /* UIFont+CZFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CZFont.m"; path = "Categories/UIFont+CZFont.m"; sourceTree = "<group>"; };
 		082B758E1EBA77F4006D9B8F /* UIColor+CZColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CZColor.h"; path = "Categories/UIColor+CZColor.h"; sourceTree = "<group>"; };
 		082B758F1EBA77F4006D9B8F /* UIColor+CZColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CZColor.m"; path = "Categories/UIColor+CZColor.m"; sourceTree = "<group>"; };
+		087528E71ED7E33500313CA0 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialViewController.h; path = Controllers/TutorialViewController.h; sourceTree = "<group>"; };
+		087528E81ED7E33500313CA0 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialViewController.m; path = Controllers/TutorialViewController.m; sourceTree = "<group>"; };
+		087528EA1ED7E9B300313CA0 /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageCollectionViewCell.h; path = Views/ImageCollectionViewCell.h; sourceTree = "<group>"; };
+		087528EB1ED7E9B300313CA0 /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageCollectionViewCell.m; path = Views/ImageCollectionViewCell.m; sourceTree = "<group>"; };
 		0892D1421EC49EFA00052F34 /* VacanciesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VacanciesViewController.h; path = Controllers/VacanciesViewController.h; sourceTree = "<group>"; };
 		0892D1431EC49EFA00052F34 /* VacanciesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VacanciesViewController.m; path = Controllers/VacanciesViewController.m; sourceTree = "<group>"; };
 		089857781ED4896B00F6F8F9 /* DetailedVacancyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailedVacancyViewController.h; path = Controllers/DetailedVacancyViewController.h; sourceTree = "<group>"; };
@@ -127,6 +135,10 @@
 		08A155DA1ED592F800779E0A /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatsViewController.m; path = Controllers/StatsViewController.m; sourceTree = "<group>"; };
 		08A155DC1ED5D78200779E0A /* HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelperMethods.h; path = Models/HelperMethods.h; sourceTree = "<group>"; };
 		08A155DD1ED5D78200779E0A /* HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelperMethods.m; path = Models/HelperMethods.m; sourceTree = "<group>"; };
+		08BB53461EE6CF4C00896772 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilterViewController.h; path = Controllers/FilterViewController.h; sourceTree = "<group>"; };
+		08BB53471EE6CF4C00896772 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilterViewController.m; path = Controllers/FilterViewController.m; sourceTree = "<group>"; };
+		08D0B5C11EDF4FE600AB06EB /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Controllers/MapViewController.h; sourceTree = "<group>"; };
+		08D0B5C21EDF4FE600AB06EB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Controllers/MapViewController.m; sourceTree = "<group>"; };
 		08D256051EC5FD9B00763F63 /* VacanciesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VacanciesCollectionViewCell.h; path = Views/VacanciesCollectionViewCell.h; sourceTree = "<group>"; };
 		08D256061EC5FD9B00763F63 /* VacanciesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VacanciesCollectionViewCell.m; path = Views/VacanciesCollectionViewCell.m; sourceTree = "<group>"; };
 		08D2560B1EC6012300763F63 /* VacanciesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VacanciesTableViewCell.h; path = Views/VacanciesTableViewCell.h; sourceTree = "<group>"; };
@@ -268,6 +280,14 @@
 				08A155DA1ED592F800779E0A /* StatsViewController.m */,
 				08A155DC1ED5D78200779E0A /* HelperMethods.h */,
 				08A155DD1ED5D78200779E0A /* HelperMethods.m */,
+				087528E71ED7E33500313CA0 /* TutorialViewController.h */,
+				087528E81ED7E33500313CA0 /* TutorialViewController.m */,
+				087528EA1ED7E9B300313CA0 /* ImageCollectionViewCell.h */,
+				087528EB1ED7E9B300313CA0 /* ImageCollectionViewCell.m */,
+				08D0B5C11EDF4FE600AB06EB /* MapViewController.h */,
+				08D0B5C21EDF4FE600AB06EB /* MapViewController.m */,
+				08BB53461EE6CF4C00896772 /* FilterViewController.h */,
+				08BB53471EE6CF4C00896772 /* FilterViewController.m */,
 			);
 			path = CZAstana;
 			sourceTree = "<group>";
@@ -511,6 +531,7 @@
 				0898577A1ED4896B00F6F8F9 /* DetailedVacancyViewController.m in Sources */,
 				08A155CF1ED568A000779E0A /* TestResultsGenerator.m in Sources */,
 				081C84F41ED40903006B1A5E /* FavViewController.m in Sources */,
+				087528E91ED7E33500313CA0 /* TutorialViewController.m in Sources */,
 				082B75821EBA51F3006D9B8F /* MenuCollectionViewCell.m in Sources */,
 				08A155C91ED566CC00779E0A /* TestViewController.m in Sources */,
 				08D2560D1EC6012300763F63 /* VacanciesTableViewCell.m in Sources */,
@@ -519,10 +540,12 @@
 				082B75851EBA5FB9006D9B8F /* MenuItemCollectionViewCell.m in Sources */,
 				08A155CC1ED5674800779E0A /* QuestionCollectionViewCell.m in Sources */,
 				08D256071EC5FD9B00763F63 /* VacanciesCollectionViewCell.m in Sources */,
+				08D0B5C31EDF4FE600AB06EB /* MapViewController.m in Sources */,
 				08FEEEBE1ED2D93000B1D139 /* InternshipsViewController.m in Sources */,
 				082B757F1EBA4F99006D9B8F /* MenuView.m in Sources */,
 				08D256291EC6734100763F63 /* UIImage+CZImage.m in Sources */,
 				0892D1441EC49EFA00052F34 /* VacanciesViewController.m in Sources */,
+				087528EC1ED7E9B400313CA0 /* ImageCollectionViewCell.m in Sources */,
 				08A155DE1ED5D78200779E0A /* HelperMethods.m in Sources */,
 				082B758D1EBA6A3C006D9B8F /* UIFont+CZFont.m in Sources */,
 				08A155D81ED5908A00779E0A /* Internship.m in Sources */,
@@ -534,6 +557,7 @@
 				08D256261EC65F8F00763F63 /* NewsCollectionViewCell.m in Sources */,
 				08A155DB1ED592F800779E0A /* StatsViewController.m in Sources */,
 				08A155D51ED5694300779E0A /* Question.m in Sources */,
+				08BB53481EE6CF4C00896772 /* FilterViewController.m in Sources */,
 				082B75431EBA4840006D9B8F /* main.m in Sources */,
 				08D256231EC65BE700763F63 /* NewsViewController.m in Sources */,
 			);
@@ -677,6 +701,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SQGZ5MNAN6;
 				INFOPLIST_FILE = CZAstana/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CZAstana.ArkalykAkash.CZAstana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -690,6 +715,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SQGZ5MNAN6;
 				INFOPLIST_FILE = CZAstana/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CZAstana.ArkalykAkash.CZAstana;
 				PRODUCT_NAME = "$(TARGET_NAME)";

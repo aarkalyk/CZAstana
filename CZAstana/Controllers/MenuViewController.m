@@ -7,6 +7,8 @@
 //
 
 #import "MenuViewController.h"
+#import "UIColor+CZColor.h"
+#import "UIFont+CZFont.h"
 #import <Parse/Parse.h>
 #import "MenuView.h"
 
@@ -21,7 +23,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"Меню";
+    self.view.backgroundColor = [UIColor ultraLightGray];
+    
+    UIView *navBarTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    //UIImageView *logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, navBarTitleView.frame.size.height*0.9, navBarTitleView.frame.size.height*0.9)];
+    //logoImageView.center = navBarTitleView.center;
+    //logoImageView.image = [UIImage imageNamed:@"logo"];
+    //[navBarTitleView addSubview:logoImageView];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:navBarTitleView.bounds];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.font = [UIFont fontBoldWithSize:23];
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.text = @"CZ Astana";
+    titleLabel.backgroundColor = [UIColor clearColor];
+    [navBarTitleView addSubview:titleLabel];
+    
+    self.navigationItem.titleView = navBarTitleView;
     
     [self getDataFromParse];
     

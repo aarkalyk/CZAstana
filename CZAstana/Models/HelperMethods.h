@@ -12,6 +12,6 @@
 @interface HelperMethods : NSObject
 
 +(void)textViewDidChange:(UITextView *)textView;
-
++(NSString *)convertNSDatetoString:(NSDate *)date;
 
 @end

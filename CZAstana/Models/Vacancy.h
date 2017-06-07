@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HelperMethods.h"
+#import <Parse/Parse.h>
 
 @interface Vacancy : NSObject
 
@@ -17,10 +19,10 @@
 @property (nonatomic) NSString *category;
 @property (nonatomic) int salary;
 @property (nonatomic) NSString *createdAt;
+@property (nonatomic) PFObject *parseObject;
 
--(instancetype)initWithNameKaz:(NSString *)nameKaz andNameRus:(NSString *)nameRus andDescrKaz:(NSString *)descrKaz andDescrRus:(NSString *)descrRus andCategory:(NSString *)category andSalary:(int )salary andCreatedAt:(NSString *)createdAt;
+-(instancetype)initWithNameKaz:(NSString *)nameKaz andNameRus:(NSString *)nameRus andDescrKaz:(NSString *)descrKaz andDescrRus:(NSString *)descrRus andCategory:(NSString *)category andSalary:(int )salary andCreatedAt:(NSString *)createdAt andParseObject:(PFObject *)parseObject;
 
-+(NSString *)convertNSDatetoString:(NSDate *)date;
 +(void)getAllVacanciesWithClosure:(void(^)(NSMutableArray *vacancies)) closure;
 
 @end

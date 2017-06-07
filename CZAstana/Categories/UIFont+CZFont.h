@@ -14,4 +14,6 @@
 +(UIFont *)fontRegularWithSize:(CGFloat)size;
 +(UIFont *)fontBoldWithSize:(CGFloat)size;
 
++(UIFont *)futuraExtraBoldWithSize:(CGFloat )size;
+
 @end

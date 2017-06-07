@@ -26,8 +26,10 @@
         self.layer.masksToBounds = NO;
         self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:self.layer.cornerRadius].CGPath;
         
-        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -4, self.contentView.frame.size.width, self.contentView.frame.size.height)];
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -4, self.contentView.frame.size.width*0.5, self.contentView.frame.size.height*0.5)];
+        self.imageView.center = CGPointMake(self.contentView.center.x, self.contentView.center.y-10);
         self.imageView.image = [UIImage imageNamed:@"daniyar.jpg"];
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.contentView addSubview:self.imageView];
         
         self.titleTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, self.contentView.frame.size.height*0.6, self.contentView.frame.size.width, self.contentView.frame.size.height*0.4)] ;

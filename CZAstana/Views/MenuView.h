@@ -21,6 +21,7 @@
 @property (nonatomic) UILabel *titleLabel;
 @property (nonatomic) UICollectionView *collectionView;
 @property (nonatomic) UIPageControl *pageControl;
+@property (nonatomic) UIImageView *backgroundImageView;
 
 @property (nonatomic) id <MenuViewDelegate> delegate;
 

@@ -7,6 +7,7 @@
 //
 
 #import "VacanciesTableViewCell.h"
+#import "UIColor+CZColor.h"
 #import "UIFont+CZFont.h"
 
 @implementation VacanciesTableViewCell
@@ -30,14 +31,21 @@
         self.titleLabel.textColor = [UIColor blackColor];
         self.titleLabel.font = [UIFont fontRegularWithSize:14];
         
-        self.salaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.titleLabel.frame.origin.x, height/2.0, titleWidth/2.0, titleheight)];
-        self.salaryLabel.textColor = [UIColor lightGrayColor];
-        self.salaryLabel.font = [UIFont fontLightWithSize:14];
-        
-        self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.salaryLabel.frame), height/2.0, titleWidth/2.0, titleheight)];
+        self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.titleLabel.frame.origin.x+titleWidth/2.0, height/2.0, titleWidth/2.0, titleheight)];
         self.dateLabel.textAlignment = NSTextAlignmentRight;
         self.dateLabel.textColor = [UIColor lightGrayColor];
         self.dateLabel.font = [UIFont fontLightWithSize:14];
+        
+        self.salaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.titleLabel.frame.origin.x, height/2.0, titleWidth/3.0, 16)];
+        self.salaryLabel.textColor = [UIColor whiteColor];
+        self.salaryLabel.center = CGPointMake(self.salaryLabel.center.x, self.dateLabel.center.y);
+        self.salaryLabel.textAlignment = NSTextAlignmentCenter;
+        self.salaryLabel.backgroundColor = [UIColor customLightGrayColor];
+        self.salaryLabel.layer.cornerRadius = 5.0f;
+        self.salaryLabel.clipsToBounds = YES;
+        self.salaryLabel.font = [UIFont fontLightWithSize:14];
+        
+        
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         

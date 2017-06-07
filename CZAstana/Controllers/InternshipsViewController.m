@@ -6,12 +6,15 @@
 //  Copyright © 2017 ARKALYK AKASH. All rights reserved.
 //
 
-#import "InternshipsViewController.h"
+#import "DetailedVacancyViewController.h"
 #import "VacanciesCollectionViewCell.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "InternshipsViewController.h"
 #import "VacanciesViewController.h"
 #import "UIImageView+CZImageView.h"
 #import "VacanciesTableViewCell.h"
 #import "UIColor+CZColor.h"
+#import "Internship.h"
 #import "SearchView.h"
 
 @interface InternshipsViewController ()<UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
@@ -20,6 +23,7 @@
 @property (nonatomic) UITableView *tableView;
 @property (nonatomic) SearchView *searchView;
 @property (nonatomic) NSMutableArray *categoryIconNames;
+@property (nonatomic) NSMutableArray *internships;
 
 @end
 
@@ -44,6 +48,16 @@
                                                   }];
     
     [self setup];
+    [SVProgressHUD show];
+    [Internship getAllInternshipsWithClosure:^(NSMutableArray *internships) {
+        self.internships = internships;
+        [self.tableView reloadData];
+        [SVProgressHUD dismiss];
+    }];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [SVProgressHUD dismiss];
 }
 
 -(void)setup{
@@ -98,21 +112,32 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.internships.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     VacanciesTableViewCell *cell = (VacanciesTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    cell.titleLabel.text = @"iOS developer";
-    cell.dateLabel.text = @"May 4th";
-    cell.salaryLabel.text = @"3000$";
+    Internship *internship = self.internships[indexPath.row];
+    cell.titleLabel.text = internship.nameKaz;
+    NSLog(@"\n name: %@ \n", internship.nameKaz);
+    cell.dateLabel.text = internship.createdAt;
+    //cell.salaryLabel.text = internship.nameRus;
+    cell.starImageView.image = [UIImage imageNamed:@"star_gray"];
+    cell.salaryLabel.hidden = YES;
     
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 55;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DetailedVacancyViewController *VC = [[DetailedVacancyViewController alloc] init];
+    VC.internship = self.internships[indexPath.row];
+    VC.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    [self presentViewController:VC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

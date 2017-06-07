@@ -30,9 +30,13 @@
         self.bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, height-0.7, self.contentView.frame.size.width, 0.7)];
         self.bottomLine.backgroundColor = [UIColor grayColor];
         
+        self.arrowImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.contentView.frame.size.width-50, height/2.0-20, 40, 40)];
+        self.arrowImageView.image = [UIImage imageNamed:@"arrowRight"];
+        
         [self.contentView addSubview:self.titleLabel];
         [self.contentView addSubview:self.infoLabel];
         [self.contentView addSubview:self.bottomLine];
+        [self.contentView addSubview:self.arrowImageView];
     }
     
     return self;

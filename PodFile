@@ -8,5 +8,6 @@ target 'CZAstana' do
 pod 'Parse'
 pod 'SVProgressHUD'
 pod 'BEMSimpleLineGraph'
+pod 'GoogleMaps'
 
 end

@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Internship.h"
 #import "Vacancy.h"
 
 @interface DetailedVacancyViewController : UIViewController
 
 @property (nonatomic) Vacancy *vacancy;
+@property (nonatomic) Internship *internship;
 
 @end

@@ -13,5 +13,6 @@
 @property (nonatomic) UILabel *titleLabel;
 @property (nonatomic) UILabel *infoLabel;
 @property (nonatomic) UIView *bottomLine;
+@property (nonatomic) UIImageView *arrowImageView;
 
 @end

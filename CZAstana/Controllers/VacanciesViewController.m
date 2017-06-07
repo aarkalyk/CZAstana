@@ -13,6 +13,7 @@
 #import "UIImageView+CZImageView.h"
 #import "VacanciesTableViewCell.h"
 #import "UIColor+CZColor.h"
+#import "UIColor+CZColor.h"
 #import "SearchView.h"
 #import "Vacancy.h"
 
@@ -31,6 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor ultraLightGray];
+    
     [[NSNotificationCenter defaultCenter] addObserverForName:@"BarsShouldHide"
                                                       object:nil
                                                        queue:nil
@@ -47,6 +50,10 @@
                                                   }];
     
     [self setup];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [SVProgressHUD dismiss];
 }
 
 -(void)setup{
@@ -68,9 +75,9 @@
     self.collectionView.dataSource = self;
     self.collectionView.showsHorizontalScrollIndicator = NO;
     [self.collectionView registerClass:[VacanciesCollectionViewCell class] forCellWithReuseIdentifier:@"CVCell"];
-    [self.view addSubview:self.collectionView];
+    //[self.view addSubview:self.collectionView];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.collectionView.frame), self.view.frame.size.width, self.view.frame.size.height - CGRectGetMaxY(self.collectionView.frame)) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.searchView.frame), self.view.frame.size.width, self.view.frame.size.height - CGRectGetMaxY(self.collectionView.frame)) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[VacanciesTableViewCell class] forCellReuseIdentifier:@"Cell"];
@@ -127,9 +134,10 @@
     
     Vacancy *vacancy = self.vacancies[indexPath.row];
     
-    cell.titleLabel.text = vacancy.nameKaz;
+    cell.titleLabel.text = vacancy.nameRus;
+    NSLog(@"\n %@ \n", vacancy.nameKaz);
     cell.dateLabel.text = vacancy.createdAt;
-    cell.salaryLabel.text = [NSString stringWithFormat:@"%i теңге", vacancy.salary];
+    cell.salaryLabel.text = [NSString stringWithFormat:@"номер %i", vacancy.salary];
     cell.starImageView.image = [UIImage imageNamed:@"star_gray"];
     cell.button.tag = indexPath.row;
     [cell.button addTarget:self action:@selector(starButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -146,9 +154,7 @@
     //[UIImageView setColor:[UIColor customGoldColor] toImageView:cell.starImageView];
     DetailedVacancyViewController *VC = [DetailedVacancyViewController new];
     VC.vacancy = self.vacancies[indexPath.row];
-    //[self.navigationController pushViewController:VC animated:YES];
-    VC.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    [self presentViewController:VC animated:YES completion:nil];
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 -(void)starButtonPressed:(UIButton *)sender{
@@ -161,26 +167,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - ScrollView delegate
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"BarsShouldHide" object:self];
-    
-}
+/*
+ #pragma mark - ScrollView delegate
+ -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+ {
+ [[NSNotificationCenter defaultCenter] postNotificationName:@"BarsShouldHide" object:self];
+ 
+ }
+ 
+ -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView
+ willDecelerate:(BOOL)decelerate
+ {
+ if(!decelerate)
+ [[NSNotificationCenter defaultCenter] postNotificationName:@"BarsShouldUnhide"
+ object:self];
+ }
+ 
+ - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+ {
+ [[NSNotificationCenter defaultCenter] postNotificationName:@"BarsShouldUnhide"
+ object:self];
+ }
 
--(void)scrollViewDidEndDragging:(UIScrollView *)scrollView
-                 willDecelerate:(BOOL)decelerate
-{
-    if(!decelerate)
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"BarsShouldUnhide"
-                                                            object:self];
-}
+ */
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"BarsShouldUnhide"
-                                                        object:self];
-}
 
 #pragma mark - Tabbar animations
 // pass a param to describe the state change, an animated flag and a completion block matching UIView animations completion

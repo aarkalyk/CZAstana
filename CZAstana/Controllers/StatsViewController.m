@@ -64,7 +64,7 @@
     self.graphView = [[BEMSimpleLineGraphView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)];
     self.graphView.delegate = self;
     self.graphView.dataSource = self;
-    self.graphView.colorTop = [UIColor mainGreenColor];
+    self.graphView.colorTop = [UIColor newLightBlueColor];
     self.graphView.colorBottom = [UIColor mainGreenColor];
     self.graphView.widthLine = 3.0f;
     self.graphView.tintColor = [UIColor whiteColor];

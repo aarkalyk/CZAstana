@@ -10,6 +10,7 @@
 #import "DayCollectionViewCell.h"
 #import "AboutViewController.h"
 #import "AboutTableViewCell.h"
+#import "MapViewController.h"
 #import "UIColor+CZColor.h"
 #import "UIFont+CZFont.h"
 
@@ -31,17 +32,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableViewTitles = @[@"Адрес", @"Телефон", @"Сайт", @"Email"];
-    self.tableViewInfo = @[@"Ул. Бейбитшилик, 11", @"+77172771725", @"www.astana.gov.kz/kk/", @"office_akimat@astana.kz"];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.tableViewTitles = @[@"Адрес", @"Aвтобусы", @"Телефон", @"Сайт", @"Email"];
+    self.tableViewInfo = @[@"Ул. Бейбитшилик, 11", @"5, 8, 9, 10, 20, 23, 25, 26, 33, 34, 43, 71, 73", @"+77172771725", @"www.astana.gov.kz/kk/", @"office_akimat@astana.kz"];
     
     self.daysRus = @[@"ПН", @"ВТ", @"СР", @"ЧТ", @"ПТ", @"СБ", @"ВС"];
     
     self.navigationItem.title = @"О нас";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 15, self.view.frame.size.width - 20, 55*4) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 15, self.view.frame.size.width - 20, 55.0*self.tableViewTitles.count) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.scrollEnabled = NO;
     [self.tableView registerClass:[AboutTableViewCell class] forCellReuseIdentifier:@"Cell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];
@@ -90,12 +94,14 @@
     
     cell.titleLabel.text = self.tableViewTitles[indexPath.row];
     cell.infoLabel.text = self.tableViewInfo[indexPath.row];
+    cell.arrowImageView.hidden = YES;
+    
+    if (indexPath.row == 0 || indexPath.row == 3) {
+        cell.arrowImageView.hidden = NO;
+    }
     
     if (indexPath.row > 1) {
         cell.infoLabel.textColor = [UIColor customDarkGreenColor];
-        if (indexPath.row == 2) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://astana.gov.kz"] options:[NSDictionary dictionaryWithObject:@"" forKey:@""] completionHandler:nil];
-        }
     }else{
         cell.infoLabel.textColor = [UIColor blackColor];
     }
@@ -105,6 +111,16 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 55;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 2) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://astana.gov.kz"] options:[NSDictionary dictionaryWithObject:@"" forKey:@""] completionHandler:nil];
+    }else if(indexPath.row == 0){
+        MapViewController *VC = [MapViewController new];
+        VC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:VC animated:YES];
+    }
 }
 
 #pragma mark - CollectionView delegate

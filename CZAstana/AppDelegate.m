@@ -7,6 +7,7 @@
 //
 
 #import "VacanciesViewController.h"
+#import "TutorialViewController.h"
 #import "AboutViewController.h"
 #import "MenuViewController.h"
 #import "NewsViewController.h"
@@ -16,6 +17,8 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 
+@import GoogleMaps;
+
 @interface AppDelegate ()
 
 @end
@@ -24,6 +27,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //Google maps
+    [GMSServices provideAPIKey:@"AIzaSyB-1wbQ5gcHFSrrSkA-hN6xc8hLrZ7F7t4"];
     
     //Parse
     [Parse initializeWithConfiguration: [ParseClientConfiguration configurationWithBlock: ^ (id < ParseMutableClientConfiguration > _Nonnull configuration) {
@@ -93,27 +99,27 @@
     NSArray<UIViewController *> *controllers = [[NSArray alloc] initWithObjects: navigationController2, navigationController, navigationController1, navigationController3, navigationController4, nil];
     self.tabBarController.viewControllers = controllers;
     UITabBarItem *item = self.tabBarController.tabBar.items[0];
-    item.image = [UIImage imageNamed:@"star"];
+    item.image = [UIImage imageWithImage:[UIImage imageNamed:@"star"] scaledToSize:CGSizeMake(26, 26)];
     item.title = @"Избранные";
     UITabBarItem *item1 = self.tabBarController.tabBar.items[1];
-    item1.image = [UIImage imageWithImage:[UIImage imageNamed:@"pin"] scaledToSize:CGSizeMake(30, 30)];
+    item1.image = [UIImage imageWithImage:[UIImage imageNamed:@"pin"] scaledToSize:CGSizeMake(26, 26)];
     item1.title = @"О нас";
     UITabBarItem *item2 = self.tabBarController.tabBar.items[2];
-    item2.image = [UIImage imageNamed:@"home"];
+    item2.image = [UIImage imageWithImage:[UIImage imageNamed:@"home"] scaledToSize:CGSizeMake(26, 26)];
     item2.title = @"Меню";
     UITabBarItem *item3 = self.tabBarController.tabBar.items[3];
-    item3.image = [UIImage imageWithImage:[UIImage imageNamed:@"bell"] scaledToSize:CGSizeMake(30, 30)];
+    item3.image = [UIImage imageWithImage:[UIImage imageNamed:@"bell"] scaledToSize:CGSizeMake(26, 26)];
     item3.title = @"Уведомления";
     UITabBarItem *item4 = self.tabBarController.tabBar.items[4];
-    item4.image = [UIImage imageWithImage:[UIImage imageNamed:@"settings"] scaledToSize:CGSizeMake(30, 30)];
+    item4.image = [UIImage imageWithImage:[UIImage imageNamed:@"settings"] scaledToSize:CGSizeMake(26, 26)];
     item4.title = @"Настройки";
     self.tabBarController.tabBar.barTintColor = [UIColor whiteColor];
     self.tabBarController.tabBar.shadowImage = [UIImage new];
-    self.tabBarController.tabBar.tintColor = [UIColor customGoldColor];
-    self.tabBarController.tabBar.unselectedItemTintColor = [UIColor mainGreenColor];
+    self.tabBarController.tabBar.tintColor = [UIColor mainGreenColor];
+    self.tabBarController.tabBar.unselectedItemTintColor = [UIColor lightGrayColor];
     self.tabBarController.selectedIndex = 2;
     
-    self.window.rootViewController = self.tabBarController;
+    self.window.rootViewController = [TutorialViewController new];
     [self.window makeKeyAndVisible];
     
     return YES;
