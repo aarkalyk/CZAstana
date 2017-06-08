@@ -6,10 +6,13 @@
 //  Copyright © 2017 ARKALYK AKASH. All rights reserved.
 //
 
+#import <CoreLocation/CoreLocation.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import "MapViewController.h"
 
 @interface MapViewController ()
+
+@property (nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -20,8 +23,14 @@
     
     self.title = @"Местоположение ЦЗ Астана";
     
+    self.locationManager = [CLLocationManager new];
+    [self.locationManager requestWhenInUseAuthorization];
+    
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:51.129674 longitude:71.422712 zoom:14.0f];
     GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    mapView.myLocationEnabled = YES;
+    mapView.settings.myLocationButton = YES;
+
     self.view = mapView;
     
     GMSMarker *marker = [[GMSMarker alloc] init];

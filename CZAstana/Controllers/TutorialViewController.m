@@ -49,13 +49,15 @@
     [self.collectionView registerClass:[ImageCollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
     [self.view addSubview:self.collectionView];
     
-    self.getStartedButton = [[UIButton alloc] initWithFrame:CGRectMake(30, self.view.frame.size.height-100, self.view.frame.size.width - 60, 44)];
+    self.getStartedButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-80, self.view.frame.size.width*0.5, 44)];
+    self.getStartedButton.center = CGPointMake(self.view.center.x, self.getStartedButton.center.y);
     [self.getStartedButton setTitle:@"Начать" forState:UIControlStateNormal];
     self.getStartedButton.backgroundColor = [UIColor mainGreenColor];
     [self.getStartedButton addTarget:self action:@selector(getStartedButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    self.getStartedButton.layer.cornerRadius = self.getStartedButton.frame.size.height/2.0;
     [self.view addSubview:self.getStartedButton];
     
-    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.getStartedButton.frame.origin.y-20, self.view.frame.size.width, 10)];
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.getStartedButton.frame.origin.y-30, self.view.frame.size.width, 10)];
     self.pageControl.currentPageIndicatorTintColor = [UIColor mainGreenColor];
     self.pageControl.pageIndicatorTintColor = [UIColor customLightGrayColor];
     self.pageControl.numberOfPages = self.imageNamesArray.count;

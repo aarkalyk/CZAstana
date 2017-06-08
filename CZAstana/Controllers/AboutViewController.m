@@ -101,7 +101,7 @@
     }
     
     if (indexPath.row > 1) {
-        cell.infoLabel.textColor = [UIColor customDarkGreenColor];
+        cell.infoLabel.textColor = [UIColor secondaryColor];
     }else{
         cell.infoLabel.textColor = [UIColor blackColor];
     }
@@ -143,12 +143,12 @@
         cell.titleLabel.textColor = [UIColor whiteColor];
         cell.layer.borderColor = [UIColor clearColor].CGColor;
     }else if(indexPath.row == 0){
-        cell.backgroundColor = [UIColor mainGreenColor];
+        cell.backgroundColor = [UIColor secondaryColor];
         cell.titleLabel.textColor = [UIColor whiteColor];
     }else{
         cell.backgroundColor = [UIColor whiteColor];
         cell.layer.borderWidth = 1.0f;
-        cell.layer.borderColor = [UIColor mainGreenColor].CGColor;
+        cell.layer.borderColor = [UIColor secondaryColor].CGColor;
         cell.titleLabel.textColor = [UIColor blackColor];
     }
     
@@ -172,13 +172,13 @@
         }else{
             cell.backgroundColor = [UIColor whiteColor];
             cell.layer.borderWidth = 1.0f;
-            cell.layer.borderColor = [UIColor mainGreenColor].CGColor;
+            cell.layer.borderColor = [UIColor secondaryColor].CGColor;
             cell.titleLabel.textColor = [UIColor blackColor];
         }
     }
     
     DayCollectionViewCell *cell = (DayCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor mainGreenColor];
+    cell.backgroundColor = [UIColor secondaryColor];
     cell.titleLabel.textColor = [UIColor whiteColor];
 }
 

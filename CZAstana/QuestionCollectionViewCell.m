@@ -15,7 +15,8 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        int distFromTop = 60;
+        
+        int distFromTop = 0;
         int distFromLabelToImage = 20;
         int lineSpace = self.contentView.frame.size.width*0.05;
         int optionButtonWidth = (self.contentView.frame.size.width*(0.75))/2;
@@ -32,16 +33,16 @@
             buttonTitleSize = 15;
         }
         
-        self.questionNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, distFromTop, self.contentView.frame.size.width, 70)];
-        self.questionNumberLabel.textColor = [UIColor whiteColor];
+        self.questionNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.contentView.frame.size.width, 20)];
+        self.questionNumberLabel.textColor = [UIColor mainGreenColor];
         self.questionNumberLabel.textAlignment = NSTextAlignmentCenter;
         self.questionNumberLabel.text = @"1 Сұрақ";
         self.questionNumberLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
         [self.contentView addSubview:self.questionNumberLabel];
         
         
-        self.questionTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.questionNumberLabel.frame)+distFromLabelToImage, self.contentView.frame.size.width, 20)];
-        self.questionTextView.textColor = [UIColor whiteColor];
+        self.questionTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.questionNumberLabel.frame), self.contentView.frame.size.width, 20)];
+        self.questionTextView.textColor = [UIColor mainGreenColor];
         self.questionTextView.text  = @"Do you like coding?!";
         self.questionTextView.font = [UIFont fontWithName:@"Helvetica" size:18];
         self.questionTextView.editable = NO;
@@ -60,8 +61,14 @@
         self.optionTextView1.textAlignment = NSTextAlignmentCenter;
         self.optionTextView1.editable = NO;
         self.optionTextView1.selectable = NO;
-        self.optionTextView1.layer.cornerRadius = 10;
+        self.optionTextView1.layer.cornerRadius = 10.0f;
         self.optionTextView1.textColor = [UIColor customBlueTextColor];
+        self.optionTextView1.layer.shadowRadius  = 4.0f;
+        self.optionTextView1.layer.shadowColor   = [UIColor lightGrayColor].CGColor;
+        self.optionTextView1.layer.shadowOffset  = CGSizeMake(2.0f, 2.0f);
+        self.optionTextView1.layer.shadowOpacity = 0.4f;
+        self.optionTextView1.layer.masksToBounds = NO;
+        
         [self.contentView addSubview:self.optionTextView1];
         
         self.optionButton1 = [[UIButton alloc] initWithFrame:CGRectMake(lineSpace, CGRectGetMaxY(self.questionTextView.frame), optionButtonWidth, optionButtonHeight*3)];
@@ -70,6 +77,9 @@
         self.optionButton1.backgroundColor = [UIColor clearColor];
         [self.optionButton1 setTitleColor:buttonTitleColor forState:UIControlStateNormal];
         [self.contentView addSubview:self.optionButton1];
+        UIEdgeInsets shadowInsets     = UIEdgeInsetsMake(0, 0, -1.5f, 0);
+        UIBezierPath *shadowPath      = [UIBezierPath bezierPathWithRect:UIEdgeInsetsInsetRect(self.optionButton1.bounds, shadowInsets)];
+        self.optionButton1.layer.shadowPath    = shadowPath.CGPath;
         
         [self.optionTextView2 addObserver:self forKeyPath:@"contentSize" options:(NSKeyValueObservingOptionNew) context:NULL];
         self.optionTextView2 = [[UITextView alloc] initWithFrame:CGRectMake(lineSpace, CGRectGetMaxY(self.optionTextView1.frame)+20, self.contentView.frame.size.width-lineSpace*2, 50)];
@@ -82,6 +92,11 @@
         self.optionTextView2.editable = NO;
         self.optionTextView2.selectable = NO;
         self.optionTextView2.textColor = [UIColor customBlueTextColor];
+        self.optionTextView2.layer.shadowRadius  = 4.0f;
+        self.optionTextView2.layer.shadowColor   = [UIColor lightGrayColor].CGColor;
+        self.optionTextView2.layer.shadowOffset  = CGSizeMake(2.0f, 2.0f);
+        self.optionTextView2.layer.shadowOpacity = 0.4f;
+        self.optionTextView2.layer.masksToBounds = NO;
         [self.contentView addSubview:self.optionTextView2];
         
         self.optionButton2 = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.optionButton1.frame)+lineSpace, CGRectGetMaxY(self.questionTextView.frame), optionButtonWidth, optionButtonHeight)];
@@ -89,13 +104,19 @@
         self.optionButton2.tag = 2;
         [self.optionButton2 setTitleColor:buttonTitleColor forState:UIControlStateNormal];
         [self.contentView addSubview:self.optionButton2];
+        UIEdgeInsets shadowInsets1     = UIEdgeInsetsMake(0, 0, -1.5f, 0);
+        UIBezierPath *shadowPath2      = [UIBezierPath bezierPathWithRect:UIEdgeInsetsInsetRect(self.optionButton2.bounds, shadowInsets1)];
+        self.optionButton2.layer.shadowPath    = shadowPath2.CGPath;
         
-        self.resultsTextView = [[UITextView alloc] initWithFrame:CGRectMake(15, CGRectGetMidY(self.questionNumberLabel.frame)-30, self.contentView.frame.size.width-30, self.contentView.frame.size.height-CGRectGetMaxY(self.questionNumberLabel.frame))];
+        self.resultsTextView = [[UITextView alloc] initWithFrame:CGRectMake(15, 0, self.contentView.frame.size.width-30, self.contentView.frame.size.height)];
         self.resultsTextView.backgroundColor = [UIColor clearColor];
-        self.resultsTextView.textColor = [UIColor whiteColor];
+        self.resultsTextView.textColor = [UIColor blackColor];
         self.resultsTextView.font = [UIFont fontWithName:@"Helvetica-Light" size:19];
         self.resultsTextView.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:self.resultsTextView];
+        
+        self.contentView.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor clearColor];
     }
     
     return self;

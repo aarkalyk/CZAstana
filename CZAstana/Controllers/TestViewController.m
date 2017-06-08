@@ -1,3 +1,5 @@
+
+#import <SVProgressHUD/SVProgressHUD.h>
 #import "QuestionCollectionViewCell.h"
 #import "TestResultsGenerator.h"
 #import "TestViewController.h"
@@ -18,6 +20,8 @@
 @property (nonatomic) NSMutableArray *questionsFromBackend;
 @property (nonatomic) NSArray *questions;
 @property (nonatomic) UICollectionView *collectionView;
+@property (nonatomic) UIImageView *backgroundImageView;
+
 @property (nonatomic) int indexOfQuestion;
 @property (nonatomic) double progress;
 
@@ -33,6 +37,7 @@
 @implementation TestViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     //if ([[ViewController getCurrentLanguage] isEqualToString:@"Russian"]) {
       //  self.navigationItem.title = @"Тест на профориентацию";
     //}else{
@@ -40,6 +45,12 @@
     //}
     
     self.navigationItem.title = @"Кәсіптік бағдар бойынша тест";
+    
+    self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-300, self.view.frame.size.width+40, 300)];
+    self.backgroundImageView.center = CGPointMake(self.view.center.x, self.backgroundImageView.center.y);
+    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.backgroundImageView.image = [UIImage imageNamed:@"background"];
+    [self.view addSubview:self.backgroundImageView];
     
     self.testResultsObjects = [[NSMutableArray alloc] init];
     self.testResultsObjects = [TestResultsGenerator getTestResults];
@@ -52,28 +63,41 @@
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.frame = gradientView.bounds;
     gradientLayer.colors = [NSArray arrayWithObjects:(id)[[UIColor customBlue7] CGColor], (id)[[UIColor customBlue2] CGColor], nil];
-    [self.view.layer insertSublayer:gradientLayer atIndex:0];
+    //[self.view.layer insertSublayer:gradientLayer atIndex:0];
     
     self.indexOfQuestion = 0;
-    self.questions = [[NSArray alloc] init];
+    
     self.questionsFromBackend = [[NSMutableArray alloc] init];
     
     [self drawCollectionView];
     
-    int imageWidth = self.view.frame.size.width*0.6;
+    int imageWidth = self.view.frame.size.width*0.95;
     int distFromTop = 160;
     if (self.view.frame.size.height == 480) {
         distFromTop = 120;
     }
-    self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2-imageWidth/2, distFromTop, imageWidth, 10)];
-    [self.progressView setTrackTintColor:[UIColor customDarkBlue1]];
-    [self.progressView setTintColor:[UIColor customBlue2]];
-    self.progressView.progress = self.progress/[self.questions count];
+    self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2-imageWidth/2, 20, imageWidth, 10)];
+    [self.progressView setTrackTintColor:[UIColor lightGrayColor]];
+    [self.progressView setTintColor:[UIColor secondaryColor]];
+    self.progressView.layer.cornerRadius = 4.0f;
+    self.progressView.clipsToBounds = YES;
+    self.progress = 1.0;
+    self.progressView.progress = self.progress/13.0;
     
     [self.progressView setTransform:CGAffineTransformMakeScale(1.0, 4.0)];
     
     [self.view addSubview:self.progressView];
     self.progressView.hidden = YES;
+    
+    [SVProgressHUD show];
+    [Question getAllQuestionsWithClosure:^(NSArray *questions) {
+        self.questions = questions;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+            [self.collectionView reloadData];
+            self.progressView.hidden = NO;
+        });
+    }];
     
     //[self getAllEntitysAsync];
     // Do any additional setup after loading the view.

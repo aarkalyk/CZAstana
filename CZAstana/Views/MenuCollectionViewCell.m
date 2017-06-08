@@ -61,7 +61,9 @@
         if (indexPath.row == 1) {
             [self.delegate pushVC:[NewsViewController new]];
         }else if(indexPath.row == 4){
-            [self.delegate pushVC:[VacanciesViewController new]];
+            VacanciesViewController *VC = [VacanciesViewController new];
+            VC.hidesBottomBarWhenPushed = YES;
+            [self.delegate pushVC:VC];
         }else if(indexPath.row == 7){
             [self.delegate pushVC:[InternshipsViewController new]];
         }else if(indexPath.row == 2){
